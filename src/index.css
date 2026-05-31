@@ -1,0 +1,288 @@
+@import '@fontsource/cairo/400.css';
+@import '@fontsource/cairo/600.css';
+@import '@fontsource/cairo/700.css';
+@import '@fontsource/cairo/800.css';
+@import '@fontsource/fira-code/400.css';
+@import '@fontsource/fira-code/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 35% 7%;
+    --foreground: 0 0% 100%;
+    --card: 231 36% 13%;
+    --card-foreground: 0 0% 100%;
+    --popover: 231 36% 13%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 193 100% 50%;
+    --primary-foreground: 230 35% 7%;
+    --secondary: 234 35% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 234 35% 18%;
+    --muted-foreground: 229 30% 55%;
+    --accent: 252 100% 68%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 354 70% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 230 35% 27%;
+    --input: 230 35% 27%;
+    --ring: 193 100% 50%;
+    --radius: 0.75rem;
+
+    --aurora-cyan: #00D4FF;
+    --aurora-violet: #7B5CFF;
+    --aurora-pink: #FF6B9D;
+    --space-dark: #0B0E1A;
+    --surface-dark: #151929;
+    --surface-elevated: #1C2140;
+    --border-subtle: #2A3260;
+    --border-glow: #4A5CC7;
+    --text-primary: #FFFFFF;
+    --text-secondary: #8A93B8;
+    --text-tertiary: #5A6388;
+    --success: #00D4A0;
+    --warning: #FFB84D;
+    --error: #FF4757;
+    --star-gold: #FFD700;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0B0E1A] text-white antialiased;
+    font-family: 'Cairo', sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: rtl;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100dvh;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  code, pre code {
+    font-family: 'Fira Code', monospace !important;
+  }
+
+  ::selection {
+    background: rgba(0, 212, 255, 0.3);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(21, 25, 41, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A3260;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4A5CC7;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(21, 25, 41, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(42, 50, 96, 0.5);
+  }
+
+  .glass-strong {
+    background: rgba(21, 25, 41, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(42, 50, 96, 0.5);
+  }
+
+  .glass-card {
+    background: rgba(21, 25, 41, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(42, 50, 96, 0.5);
+    border-radius: 16px;
+  }
+
+  .glass-card-hover {
+    transition: all 0.2s ease-out;
+  }
+
+  .glass-card-hover:hover {
+    border-color: #4A5CC7;
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(74, 92, 199, 0.2);
+  }
+
+  .aurora-glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
+  .aurora-glow-violet {
+    box-shadow: 0 0 20px rgba(123, 92, 255, 0.3);
+  }
+
+  .aurora-glow-pink {
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #00D4FF, #7B5CFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-aurora {
+    background: linear-gradient(135deg, #00D4FF, #7B5CFF, #FF6B9D);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #00D4FF, #7B5CFF);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #00D4FF, #7B5CFF) 1;
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 0) 0%,
+      rgba(0, 212, 255, 0.1) 50%,
+      rgba(0, 212, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+}
+
+@keyframes aurora-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(100px, 50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 100px) scale(0.9);
+  }
+}
+
+@keyframes aurora-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-80px, -40px) scale(1.05);
+  }
+  66% {
+    transform: translate(60px, -80px) scale(0.95);
+  }
+}
+
+@keyframes aurora-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(70px, -60px) scale(1.08);
+  }
+}
+
+.animate-aurora-1 {
+  animation: aurora-1 15s ease-in-out infinite;
+}
+
+.animate-aurora-2 {
+  animation: aurora-2 18s ease-in-out infinite;
+}
+
+.animate-aurora-3 {
+  animation: aurora-3 12s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 1.5s ease-out forwards;
+}
+
+@media (max-width: 428px) {
+  .glass-card {
+    border-radius: 12px;
+  }
+
+  .glass-card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

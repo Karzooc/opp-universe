@@ -1,0 +1,442 @@
+[
+  {
+    "id": 1,
+    "title": "الكلاسات والأوبجكتس",
+    "subtitle": "Classes and Objects",
+    "number": 1,
+    "icon": "Box",
+    "status": "unlocked",
+    "keyPoints": ["الكلاس هو البلان (الخطة) اللي بتحدد شكل الأوبجكت", "الأوبجكت هو نسخة حقيقية من الكلاس", "كل أوبجكت ليه state و behavior خاصين بيه"],
+    "progress": 0,
+    "summary": "بص يا نجم، الفرق بين الـ OOP والبرمجة التقليدية إن OOP بتمثل البرنامج بأوبجكتس بتتفاعل مع بعض، مش بس دوال ومتغيرات منفصلة. الأوبجكت ده أي حاجة ليها حالة (state) وسلوك (behavior). زي التلفزيون مثلاً: حالته هي الحجم واللون، وسلوكه إنه يعرض صورة أو يغير قنوات.",
+    "simplifiedSummary": "تخيل إن الكلاس زي قالب الكيكة 🎂، والأوبجكت هو الكيكة نفسها اللي طلعت من القالب! القالب بيحدد الشكل، بس كل كيكة ممكن تكون بلون مختلف.",
+    "content": {
+      "overview": "في الـ OOP، الكلاس (Class) هو القالب أو البلان (Blueprint) اللي بننشئ منه الأوبجكتس. الأوبجكت (Object) هو نسخة حقيقية (Instance) من الكلاس. يعني الكلاس بيحدد الصفات (Attributes) والعمليات (Operations) اللي كل أوبجكت هيكون معاهم.",
+      "sections": [
+        {
+          "title": "إزاي بنعمل كلاس في C#",
+          "content": "عشان تعمل كلاس في C#، بنستخدم الكلمة المفتاحية `class`. الكلاس بيحتوي على Fields (متغيرات) و Methods (دوال). كل أوبجект جديد بيتعمل من الكلاس بياخد نسخة من كل الصفات والعمليات.",
+          "code": "class Car {\n    public string color;\n    public int maxSpeed;\n    \n    public void Drive() {\n        Console.WriteLine(\"The car is driving!\");\n    }\n}"
+        },
+        {
+          "title": "إزاي بنعمل أوبجكت",
+          "content": "بعد ما تعمل الكلاس، بتعمل أوبجكت منه باستخدام الكلمة `new`. كل أوبجект بياخد نسخة من كل الحاجات اللي في الكلاس.",
+          "code": "Car myCar = new Car();\nmyCar.color = \"Red\";\nmyCar.maxSpeed = 200;\nmyCar.Drive();"
+        },
+        {
+          "title": "الفرق بين Value Types و Reference Types",
+          "content": "في C# فيه نوعين من المتغيرات: Value Types (زي int, double, bool) بيخزنوا القيمة نفسها في الميموري. Reference Types (زي الكلاسes والأrrays) بيخزنوا عنوان (Address) للقيمة اللي في الـ Heap. لما تعمل `Car c1 = new Car();` المتغير `c1` بيخزن عنوان الأوبجект في الـ Heap، مش الأوبجكت نفسه.",
+          "code": "// Value type - بيخزن القيمة مباشرة\nint x = 5;\n\n// Reference type - بيخزن عنوان الأوبجكت\nCar myCar = new Car();\nCar anotherRef = myCar; // دلوقتي الاتنين بيشاوروا على نفس الأوبجكت!"
+        },
+        {
+          "title": "Memory Layout",
+          "content": "لما البرنامج بيشتغل، الميموري بتتقسم لأربع أجزاء: Text Section (الكود نفسه)، Data Section (المتغيرات العامة)، Stack (المتغيرات المحلية اللي بتتعمل أوتوماتيك)، و Heap (البيانات اللي بتتعمل بالـ new). المتغيرات المحلية بتكون في الـ Stack، والأوبجكتس اللي بنعملها بـ `new` بتكون في الـ Heap."
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا معلم… تخيل إن الكلاس زي مخطط البيت 🏠. المخطط بيحدد إن فيه قد إيه أوضة والحمام فين. بس المخطط نفسه مش بيت! لما تبني بيت حقيقي من المخطط ده، ده هو الأوبجكت. وممكن تبني 100 بيت من نفس المخطط، كل واحد بلونه وديكوراته الخاصة!",
+    "analogy": "تخيل إن الكلاس زي قالب الكيكة من عند بتوع الحلويات 🎂. القالب بيحدد شكل الكيكة (دائرية مثلاً) و مقاسها. لما تستخدم القالب تطلع كيكة حقيقية — دي هي الأوبجكت. ممكن تعمل 10 كيكات من نفس القالب، كل واحدة بلون وطعم مختلف!",
+    "funnyNote": "مبرمج سأل أوبجكت: \"إزاي حالك؟\" الأوبجكت رد: \"مش عارف، محتاج أستدعي الـ toString() method الأول!\" 😄"
+  },
+  {
+    "id": 2,
+    "title": "أعضاء الكلاس",
+    "subtitle": "Class Members",
+    "number": 2,
+    "icon": "Users",
+    "status": "locked",
+    "keyPoints": ["Fields: المتغيرات جوه الكلاس", "Methods: الدوال اللي بتعمل حاجات", "Static: حاجات بتاعة الكلاس نفسه مش الأوبجكت", "Access Modifiers: مين يقدر يشوف إيه"],
+    "progress": 0,
+    "summary": "أعضاء الكلاس (Class Members) هم أي حاجة جوه الكلاس: Fields (متغيرات)، Methods (دوال)، Properties، Constructors، وغيرهم. كل أوبجekt من الكلاس بياخد نسخة من غير الـ Static members.",
+    "simplifiedSummary": "أعضاء الكلاس زي أعضاء الفريق كل واحد ليه دور! 🤝 الـ Fields هي البيانات، الـ Methods هي الأفعال، والـ Static هي القواعد العامة اللي بتطبق على الفريق كله.",
+    "content": {
+      "overview": "الكلاس بيحتوي على Members، وهم: Fields (المتغيرات)، Methods (الدوال)، Properties، Constructors، Destructors، و Events. كل أوبجekt ليه نسخة مستقلة من الـ Instance Members.",
+      "sections": [
+        {
+          "title": "Fields",
+          "content": "الـ Fields هي المتغيرات اللي جوه الكلاس. كل أوبجekt ليه نسخة من الـ Fields دي. بنستخدم `public` عشان نخليهم متاحين من بره الكلاس.",
+          "code": "class Player {\n    public string name;\n    public int score;\n}\n\nPlayer p1 = new Player();\np1.name = \"Salah\";\np1.score = 90;"
+        },
+        {
+          "title": "Methods",
+          "content": "الـ Methods هي الدوال اللي بتعمل حاجات. زي ما الـ Fields بتصف حالة الأوبجekt، الـ Methods بتصف سلوكه. بنستدعيها باستخدام الـ Dot Syntax.",
+          "code": "class Player {\n    public string name;\n    \n    public void Run() {\n        Console.WriteLine(name + \" is running!\");\n    }\n}\n\nPlayer p = new Player();\np.name = \"Messi\";\np.Run(); // Output: Messi is running!"
+        },
+        {
+          "title": "Static Methods و Static Fields",
+          "content": "الـ Static Methods و Static Fields بيتبعوا للكلاس نفسه، مش لأي أوبجekt. يعني مش محتاجين تعمل أوبجekt عشان تستخدمهم! Static Fields بتكون زي Global Variables — موجودة طول ما البرنامج شغال. Static Classes مش بنعمل منها أوبجكتس خالص.",
+          "code": "class Calculator {\n    public static int Add(int a, int b) {\n        return a + b;\n    }\n}\n\n// مش محتاجين نعمل أوبجكت!\nint result = Calculator.Add(5, 3);\n\n// Static class مثال\nstatic class MathHelper {\n    public static double PI = 3.14159;\n}"
+        },
+        {
+          "title": "Access Modifiers",
+          "content": "الـ Access Modifiers بتحدد مين يقدر يوصل للحاجات جوه الكلاس:\n\n- `public`: أي حاجة — زي باب مفتوح 🚪\n- `private`: بس جوه الكلاس نفسه — زي خزنة مقفولة 🔒\n- `protected`: الكلاس نفسه والكلاسes اللي ورثت منه\n- `internal`: بس جوه نفس الـ Assembly\n\nلو مكتبتش modifier، الـ Default هو `private`."
+        },
+        {
+          "title": "الـ Encapsulation",
+          "content": "الـ Encapsulation يعني نخبي البيانات الحساسة جوه الكلاس ونتحكم في مين يوصللها. بنعمل الـ Fields `private` ونخليهم يتصرفوا عن طريق `public Methods` (Getters و Setters). ده بيحمي البيانات من القيم الغلط.",
+          "code": "class Product {\n    private float price;\n    \n    public void SetPrice(float value) {\n        if (value >= 0) price = value;\n        else Console.WriteLine(\"Invalid price!\");\n    }\n    \n    public float GetPrice() {\n        return price;\n    }\n}"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا يسطا… الكلاس زي شركة فيها موظفين (Fields) ومديرين (Methods). الـ Access Modifiers زي بطاقات الدخول: public يعني أي حد يقدر يدخل، private يعني بس الموظفين الداخليين. الـ Encapsulation يعني الخزنة بتاعت الشركة مقفولة وبس المحاسب يقدر يفتحها! 🏢",
+    "analogy": "تخيل الكلاس زي مطعم برجر 🍔. الـ Fields هي المكونات (اللحمة، الخبز، الجبنة). الـ Methods هي الطباخ اللي بيعمل البرجر. الـ Private Fields هي الوصفة السرية — محدش بره يعرفها! الـ Public Methods هي الـ Menu اللي العميل يقدر يطلب منه. والـ Static? ده زي قواعد النظافة العامة اللي بتطبق على المطعم كله مش على برجر واحد!",
+    "funnyNote": "ليه المبرمج فضل يحط `private` على كل حاجة؟ عشان كان متعلم من صغره: \"متشكرش حاجتك لحد!\" 🔒😂"
+  },
+  {
+    "id": 3,
+    "title": "الـ Constructors والـ Destructors",
+    "subtitle": "Constructors & Destructors",
+    "number": 3,
+    "icon": "Hammer",
+    "status": "locked",
+    "keyPoints": ["Constructor: دالة بتتنفذ لما الأوبجكت يتعمل", "this keyword: بيشاور على الأوبجكت الحالي", "Overloaded Constructors: أكتر من constructor بنفس الاسم", "Garbage Collection: النظام بيمسح اللي مش محتاجه"],
+    "progress": 0,
+    "summary": "الـ Constructor هو دالة خاصة بتتنفذ أوتوماتيك لما بنعمل أوبجكت جديد. بيستخدم عشان نحط قيم ابتدائية للـ Fields. الـ Destructor بيتنفذ لما الأوبجكت بيتمسح من الميموري.",
+    "simplifiedSummary": "الـ Constructor زي الـ Setup لما تشتري موبايل جديد 📱 — بيفتح ويحط الإعدادات الأولية. الـ Destructor زي لما ترمي الموبايل القديم في سلة المهملات! 🗑️",
+    "content": {
+      "overview": "الـ Constructor دالة بتتنفذ لما الأوبجكت يتعمل بـ `new`. لازم يكون اسمها نفس اسم الكلاس ومش بترجع حاجة. كل كلاس أوتوماتيك بيكون معاه Constructor فاضي لو مكتبتش واحد.",
+      "sections": [
+        {
+          "title": "Constructor بدون Parameters",
+          "content": "أبسط نوع Constructor هو اللي مالوش parameters. بيتنفذ لما تعمل أوبجكت بدون ما تديله قيم.",
+          "code": "class Product {\n    public string name;\n    public float price;\n    \n    public Product() {\n        name = \"Milk\";\n        price = 10;\n    }\n}\n\nProduct p = new Product();\n// p.name = \"Milk\", p.price = 10"
+        },
+        {
+          "title": "Constructor بـ Parameters",
+          "content": "ممكن تعمل Constructor ياخد parameters عشان تحط قيم ابتدائية مختلفة لكل أوبجekt.",
+          "code": "class Product {\n    public string name;\n    public float price;\n    \n    public Product(string productName, float productPrice) {\n        name = productName;\n        price = productPrice;\n    }\n}\n\nProduct p = new Product(\"Eggs\", 40);"
+        },
+        {
+          "title": "الـ this Keyword",
+          "content": "لما يكون اسم الـ parameter نفس اسم الـ Field، الـ this بيشاور على الأوبجكت الحالي. ده بيحل مشكلة الـ Name Conflicts.",
+          "code": "class Product {\n    public float price;\n    \n    public Product(float price) {\n        this.price = price;  // this.price = الـ Field, price = الـ parameter\n    }\n}"
+        },
+        {
+          "title": "Overloaded Constructors",
+          "content": "ممكن تعمل أكتر من Constructor بنفس الاسم بس بـ parameters مختلفة. ده بيدي مرونة في إزاي تعمل الأوبجكت.",
+          "code": "class Product {\n    public string name;\n    public float price;\n    \n    public Product() {\n        name = \"Milk\"; price = 10;\n    }\n    \n    public Product(string name) {\n        this.name = name; price = 10;\n    }\n    \n    public Product(string name, float price) {\n        this.name = name; this.price = price;\n    }\n}"
+        },
+        {
+          "title": "Constructor Initializers",
+          "content": "Constructor ممكن يستدعي Constructor تاني باستخدام `this`. ده بيساعد في تفادي تكرار الكود.",
+          "code": "class Product {\n    public string name;\n    public float price;\n    \n    public Product() : this(\"Milk\", 10) { }\n    \n    public Product(string name, float price) {\n        this.name = name;\n        this.price = price;\n    }\n}"
+        },
+        {
+          "title": "Garbage Collection",
+          "content": "في C#، مفيش `delete` operator زي C++. بدلها، في Garbage Collector بيدور على الأوبجكتs اللي مبقتش مستخدمة ويمسحهم أوتوماتيك. ده بيخلي المبرمجين مش متضطرين يديروا الميموري يدوياً."
+        },
+        {
+          "title": "Destructors",
+          "content": "الـ Destructor دالة خاصة بتتنفذ لما الأوبجekt بيتمسح. اسمها بيبدأ بـ `~` ونفس اسم الكلاس. مش بتاخد parameters ولا access modifier. بنستخدمها عشان ننظف Resources زي Files أو Network Connections.",
+          "code": "class Car {\n    ~Car() {\n        // Cleanup code here\n        Console.WriteLine(\"Car object destroyed\");\n    }\n}"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا نجم… الـ Constructor زي لما تدخل مطعم والجرسون بيسألك: عايز تفضل ولا حجز؟ ده هو الـ Setup الأولي. الـ this زي ما تقول 'أنا' — بتشاور على نفسك. الـ Overloaded Constructors زي إن المطعم يقدملك منيو صغير، منيو وسط، أو منيو كبير. والـ Garbage Collector؟ ده زي الشغال اللي بيجري وراك وينضف الطبلية لما تخلص! 🍽️",
+    "analogy": "تخيل الكلاس زي مصنع عربيات 🏭. الـ Constructor هو خط الإنتاج — لما تطلب عربية جديدة، الخط بيشتغل أوتوماتيك: بيحط الموتور، بيركب العجلات، بيملى البنزين. كل عربية (أوبجekt) ممكن تطلع بلون مختلف لو طلبت كده. الـ Destructor هو المحل اللي بيفك العربية لما تبقى خردة. والـ Garbage Collector؟ ده زي شركة النظافة اللي بتيجي تشيل العربيات القديمة من المصنع عشان تفضل المساحة نظيفة! 🚗",
+    "funnyNote": "Constructor سأل Destructor: \"إنت ليه دايما زعلان؟\" Destructor رد: \"عشاني شغلتي بداية النهاية… أنا آخر واحد بيشوف الأوبجكت!\" 😢⚰️"
+  },
+  {
+    "id": 4,
+    "title": "الأوبجكتs والـ Methods والـ Arrays",
+    "subtitle": "Objects, Methods, & Arrays",
+    "number": 4,
+    "icon": "Shuffle",
+    "status": "locked",
+    "keyPoints": ["Pass by Reference: بتمرر العنوان مش النسخة", "Pass by Reference using ref: بتقدر تغير المتغير نفسه", "params: دالة بتقبل عدد متغير من الـ arguments", "Array of Objects: مجموعة من الأوبجكتs"],
+    "progress": 0,
+    "summary": "الفصل ده بيتكلم عن إزاي نتعامل مع الأوبجكتs كـ Parameters في Methods، وإزاي نمررهم بـ Reference، ونعمل Arrays من الأوبجكتs.",
+    "simplifiedSummary": "الفصل ده زي تعليمات النقل والشحن 📦 — إزاي تبعت حاجة (أوبجكت) لمكان تاني (Method) وإزاي تتعامل مع مجموعة حاجات (Array)!"
+    ,"content": {
+      "overview": "ممكن تمرر أوبجكتs كـ Parameters للـ Methods. لما تمرر أوبجكت، أنت بتمسك Reference للأوبجكت مش نسخة منه. يعني لو غيرت حاجة جوه الميثود، التغيير هياثر على الأوبجكت الأصلي.",
+      "sections": [
+        {
+          "title": "Passing References to Methods",
+          "content": "لما تمرر Reference Type لـ Method، الـ Method بتاخد نسخة من الـ Reference (مش من الأوبجكت). يعني الـ Reference الجديد والقديم بيشاوروا على نفس الأوبجكت. لو غيرت حاجة جوه الـ Method، الأوبجكت الأصلي هيتغير.",
+          "code": "class Student {\n    public string name;\n    public float score;\n}\n\nstatic void AddBonus(Student s, float bonus) {\n    s.score += bonus;  // بيغير الـ score الأصلي!\n}\n\nStudent x = new Student();\nx.score = 90;\nAddBonus(x, 5);  // x.score = 95 دلوقتي"
+        },
+        {
+          "title": "Passing References by Reference (ref)",
+          "content": "لما تستخدم `ref`، الـ Method بتقدر تغير الـ Reference نفسه! يعني ممكن تخلي المتغير يشاور على أوبجekt مختلف خالص.",
+          "code": "static void Swap(ref Student a, ref Student b) {\n    Student temp = a;\n    a = b;\n    b = temp;\n}\n\nStudent x = new Student(\"Ahmed\", 90);\nStudent y = new Student(\"Sara\", 95);\nSwap(ref x, ref y);  // دلوقتي x = Sara و y = Ahmed"
+        },
+        {
+          "title": "Variable Number of Parameters (params)",
+          "content": "باستخدام `params`، ممكن تعمل Method بتقبل أي عدد من الـ Arguments. الـ Parameters بيتجمعوا في Array أوتوماتيك.",
+          "code": "static double GetAverage(params double[] values) {\n    if (values.Length == 0) return 0;\n    double sum = 0;\n    foreach (double v in values)\n        sum += v;\n    return sum / values.Length;\n}\n\n// ممكن تديها أي عدد!\ndouble x = GetAverage(5, 4);\ndouble y = GetAverage(17, 4, 6, 45, 89);"
+        },
+        {
+          "title": "Returning Objects from Methods",
+          "content": "الـ Method ممكن ترجع أوبجكت كامل. ده مفيد لما تعمل Methods Factory اللي بتعمل وترجع أوبجكتs جديدة.",
+          "code": "class Rectangle {\n    public int width, height;\n    \n    public Rectangle Scale(int factor) {\n        return new Rectangle(width * factor, height * factor);\n    }\n}\n\nRectangle r1 = new Rectangle(4, 2);\nRectangle r2 = r1.Scale(2);  // r2 = 8x4"
+        },
+        {
+          "title": "Arrays of Objects",
+          "content": "ممكن تعمل Array من الأوبجكتs. بس لازم تفتكر إن Array ده بيخزن References مش الأوبجكتs نفسها! لازم تعمل كل أوبجekt بـ `new` قبل ما تستخدمه.",
+          "code": "Student[] students = new Student[3];\nstudents[0] = new Student(\"Ziad\", 90);\nstudents[1] = new Student(\"Malik\", 95);\nstudents[2] = new Student(\"Jodie\", 97);\n\nConsole.WriteLine(students[0].name);  // Ziad"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا معلم… تخيل إنك بتبعت صندوق لمخزن (Method). لما تبعت الصندوق، أنت بتبعت عنوان المخزن مش نسخة منه. يعني لو المخزن غير حاجة جوه الصندوق، الصندوق الأصلي هيتغير! و `ref`؟ ده زي إنك تدي المخزن المفتاح نفسه — يقدر يغير الصندوق خالص! 🔑",
+    "analogy": "تخيل إنك في مطعم بوفيه مفتوح 🍽️. الـ Array of Objects زي صفوف الأطباق — كل طبق (index) ممكن يحاكل مختلف (أوبجكت مختلف). الـ Pass by Reference زي ما تدي الشيف الطبق نفسه عشان يضيف عليه تتبيلة — الطبق بيرجع لك متغير. الـ `params` زي البوفيه اللي بيقولك \"خد اللي تحبه من أي حاجة بأي كمية!\" والـ Return Object زي الشيف اللي بيعمل طبق جديد ويقدمهولك! 👨‍🍳",
+    "funnyNote": "Array و List اتخانقوا. Array قال: \"أنا أسرع!\" List ردت: \"أنا أحلى!\" Dictionary دخلت قالت: \"أنا أذكى!\" Stack قالت: \"أنا الأخيرة!\" Queue ردت: \"أنا بنتظر دوري بهدوء\" 🍿😂"
+  },
+  {
+    "id": 5,
+    "title": "الـ Properties والـ Indexers",
+    "subtitle": "Properties and Indexers",
+    "number": 5,
+    "icon": "SlidersHorizontal",
+    "status": "locked",
+    "keyPoints": ["Properties: طريقة ذكية للوصول للـ Fields", "Automatic Properties: مختصرة و سريعة", "Read-Only و Write-Only: تحكم كامل", "Indexers: تعامل مع الأوبجكت زي Array"],
+    "progress": 0,
+    "summary": "الـ Properties بتدينا طريقة مرنة للوصول للـ Private Fields. عندهم Accessor اتنين: get (للقراءة) و set (للكتابة). الـ Indexers بتخلينا نتعامل مع الأوبجekt زي ما يكون Array.",
+    "simplifiedSummary": "Properties زي البوابة الذكية 🚪 — بتتحكم في مين يدخل (set) ويخرج (get). Indexers زي المصعد — بتدخل رقم (index) وتوصل للدور اللي عايزه! 🏢",
+    "content": {
+      "overview": "بدل ما نعمل Getters و Setters كـ Methods منفصلة، الـ Properties بتدينا syntax أحسن. بنستخدم `value` keyword في الـ set عشان نمثل القيمة اللي بتت Assign.",
+      "sections": [
+        {
+          "title": "Defining Properties",
+          "content": "الـ Property ليها Accessor اتنين: `get` بترجع قيمة الـ Field، و `set` بتحط قيمة جديدة. الـ `value` keyword بتمثل القيمة الجديدة.",
+          "code": "class Product {\n    private float price;\n    \n    public float Price {\n        set {\n            if (value >= 0) price = value;\n            else Console.WriteLine(\"Invalid price!\");\n        }\n        get {\n            return price;\n        }\n    }\n}\n\nProduct p = new Product();\np.Price = 10;           // بيستدعي set\nConsole.WriteLine(p.Price);  // بيستدعي get"
+        },
+        {
+          "title": "Automatic Properties",
+          "content": "لو الـ Property مش محتاجة Logic خاص، ممكن تستخدم Automatic Properties. C# بيعمل الـ Field الخاص أوتوماتيك.",
+          "code": "class Product {\n    // Automatic Property - C# بيعمل الـ Field\n    public string Name { get; set; }\n}\n\n// لو عايز read-only automatic\nclass Product2 {\n    public string Name { get; private set; }\n}"
+        },
+        {
+          "title": "Read-Only و Write-Only Properties",
+          "content": "Read-Only Property = `get` بس. Write-Only = `set` بس. Read-Only Automatic = `private set`.",
+          "code": "class Product {\n    private float price;\n    \n    // Read-Only\n    public float Price {\n        get { return price; }\n    }\n    \n    // Write-Only\n    public float SecretCode {\n        set { /* store securely */ }\n    }\n}"
+        },
+        {
+          "title": "Indexers",
+          "content": "الـ Indexer بيخلي الأوبجekt يتعامل زي Array. بنستخدم `this` keyword مع square brackets. مفيد جداً لما تعمل Classes بتحتوي Collections.",
+          "code": "class Histogram {\n    private int[] frequencies;\n    public int MinIndex { get; private set; }\n    public int MaxIndex { get; private set; }\n    \n    public Histogram(int min, int max) {\n        MinIndex = min; MaxIndex = max;\n        frequencies = new int[max - min + 1];\n    }\n    \n    public int this[int index] {\n        get {\n            if (index >= MinIndex && index <= MaxIndex)\n                return frequencies[index - MinIndex];\n            return 0;\n        }\n        set {\n            if (index >= MinIndex && index <= MaxIndex)\n                frequencies[index - MinIndex] = value;\n        }\n    }\n}\n\nHistogram h = new Histogram(-2, 1);\nh[-2] = 3;  // استخدام الـ Indexer!\nConsole.WriteLine(h[-2]);  // 3"
+        },
+        {
+          "title": "Overloading Indexers",
+          "content": "زي الـ Methods، ممكن تعمل أكتر من Indexer بنفس الاسم بس بـ parameters مختلفة. ممكن يكونوا one-dimensional أو multi-dimensional.",
+          "code": "class MyClass {\n    // Indexer بالـ int\n    public int this[int index] { get; set; }\n    \n    // Indexer بالـ string\n    public string this[string key] { get; set; }\n}\n\nMyClass m = new MyClass();\nm[0] = 42;\nm[\"name\"] = \"Ahmed\";"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا يسطا… الـ Property زي الكشكير بتاع الأمن 🛡️. الـ `get` هو اللي بيسأل \"مين حضرتك؟\" والـ `set` هو اللي بيقرر \"تقدر تدخل ولا لأ\". الـ Automatic Property زي الكشكير الأوتوماتيكي — شغال لوحده. والـ Indexer؟ ده زي المصيف اللي بتقول \"عايز الشقة رقم 5\" وبتدخل على طول! 🏨",
+    "analogy": "تخيل الكلاس زي فندق 🏨. الـ Properties زي مكتب الاستقبال: الـ `get` بيسأل \"عايز تعرف رقم أوضة فلان؟\" والـ `set` بيقول \"خد المفتاح وادخل\". الـ Indexer زي المصاعد — بتدوس رقم (index) وبتروح للدور اللي عايزه. الـ Overloaded Indexers زي إن الفندق يكون فيه مصاعد مختلفة: واحدة بالأرقام، واحدة بالحروف! 🛗",
+    "funnyNote": "Property سأل Method: \"إنت ليه بتعمل كل حاجة؟\" Method رد: \"أنا الـ Jack of all trades!\" Property قالت: \"طيب أنا الـ Queen of controlled access!\" 👑😂"
+  },
+  {
+    "id": 6,
+    "title": "Operator Overloading",
+    "subtitle": "Operator Overloading",
+    "number": 6,
+    "icon": "PlusCircle",
+    "status": "locked",
+    "keyPoints": ["Unary Operators: ++, --, !, ~", "Binary Operators: +, -, *, /", "Comparison Operators: ==, !=, <, >", "Conditional Operators لازم تتعمل في pairs"],
+    "progress": 0,
+    "summary": "الـ Operator Overloading بيسمح لنا نعيد تعريف الـ Operators (زي +, -, ==) عشان تشتغل مع الكلاسes بتاعتنا. يعني ممكن نخلّي `+` بين اتنين Battery يجمع طاقتهم!",
+    "simplifiedSummary": "Operator Overloading زي ما تعلم الكلب أمر جديد 🐕 — بدل ما الـ `+` يجمع أرقام بس، ممكن نخليه يجمع أوبجكتs كمان! ✨",
+    "content": {
+      "overview": "الـ Operators في C# ممكن نعيد تعريفهم للـ User-Defined Types. الـ Overloaded Operator Method لازم تكون `static` وبتستخدم الكلمة `operator` متبوعة بـ symbol الـ Operator.",
+      "sections": [
+        {
+          "title": "Overloading Unary Operators",
+          "content": "الـ Unary Operators بياخدوا operand واحد: `+`, `-`, `!`, `~`, `++`, `--`. المثود لازم تاخد parameter واحد من نوع الكلاس وترجع نتيجة.",
+          "code": "class Battery {\n    public string Name { get; private set; }\n    public int Energy { get; private set; }\n    \n    public Battery(string name, int energy) {\n        Name = name; Energy = energy;\n    }\n    \n    public static Battery operator --(Battery b) {\n        return new Battery(b.Name, b.Energy - 1);\n    }\n}\n\nBattery b = new Battery(\"Energizer\", 100);\nb--;  // Energy = 99"
+        },
+        {
+          "title": "Overloading Binary Operators",
+          "content": "الـ Binary Operators بياخدوا operandين: `+`, `-`, `*`, `/`, `%`. المثود لازم تاخد parameterين وترجع نتيجة.",
+          "code": "class Battery {\n    public string Name { get; private set; }\n    public int Energy { get; private set; }\n    \n    public static Battery operator +(Battery a, Battery b) {\n        string name = a.Name + \" & \" + b.Name;\n        int energy = a.Energy + b.Energy;\n        return new Battery(name, energy);\n    }\n}\n\nBattery a = new Battery(\"Eveready\", 30);\nBattery b = new Battery(\"Energizer\", 60);\nBattery c = a + b;  // c.Name = \"Eveready & Energizer\", c.Energy = 90"
+        },
+        {
+          "title": "Overloading Comparison Operators",
+          "content": "ممكن نعمل Overload لـ `==`, `!=`, `<`, `>`, `<=`, `>=`. العمليات المقارنة لازم تتعمل في Pairs: يعني لو عملت `==` لازم تعمل `!=`، ولو عملت `<` لازم تعمل `>`.",
+          "code": "class Battery {\n    public int Energy { get; private set; }\n    \n    public static bool operator >(Battery a, Battery b) {\n        return a.Energy > b.Energy;\n    }\n    \n    public static bool operator <(Battery a, Battery b) {\n        return a.Energy < b.Energy;\n    }\n}\n\nBattery x = new Battery(\"A\", 30);\nBattery y = new Battery(\"B\", 60);\nif (x > y) Console.WriteLine(\"x wins\");\nelse Console.WriteLine(\"y wins\");  // y wins"
+        },
+        {
+          "title": "Non-Overloadable Operators",
+          "content": "في operators مش ممكن نعملها Overload:\n\n- `&&` و `||` (الشرطية) — مش مباشرة\n- `=`, `.`, `?:`, `->`, `new`, `is`, `sizeof`, `typeof`\n- `+=`, `-=`, `*=`, `/=`, `%=` (الـ Assignment Compound)"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا نجم… الـ Operator Overloading زي ما تعلم طفل معنى جديد لكلمة. الطفل عارف إن `+` يعني جمع أرقام. بس ممكن نعلمه إن `+` بين اتنين Battery يعني \"حطهم مع بعض\"! بس في حاجات مقدرش نغيرها — زي `=` نفسها أو `new`. دي قوانين اللغة وإحنا لازم نحترمها! ⚖️",
+    "analogy": "تخيل إنك في دولة جديدة 🌍. كل دولة ليها قوانين مرور مختلفة. Operator Overloading زي ما الدولة تعيد تعريف إشارة المرور: في دولتنا، الإشارة الحمراء مش \"قف\" — هي \"خفف السرعة\"! بس في إشارات مقدرش تغيرها زي إشارة الـ Ambulance 🚑 — دي عالمية ومحدش يقدر يلعب فيها!",
+    "funnyNote": "+ و - اتجوزوا. قالوا لهم: \"إزاي هتعيشوا مع بعض؟!\" ردوا: \"إحنا Binary Operators — بنكمل بعض!\" 💑➕➖"
+  },
+  {
+    "id": 7,
+    "title": "الـ Inheritance",
+    "subtitle": "Inheritance",
+    "number": 7,
+    "icon": "GitFork",
+    "status": "locked",
+    "keyPoints": ["Base Class: الأب", "Derived Class: الابن اللي بيرث", "Code Reusability: إعادة استخدام الكود", "Abstract Classes: كلاسات مش بنعمل منها أوبجكتs", "Sealed Classes: ممنوع يرث منها"],
+    "progress": 0,
+    "summary": "الـ Inheritance هو ميكانيزم بيسمح لكلاس إنه يرث من كلاس تاني. الكلاس الابن (Derived) بياخد كل أعضاء الكلاس الأب (Base) ويضيف عليهم. ده بيوفر إعادة استخدام الكود وبيخليه منظم.",
+    "simplifiedSummary": "Inheritance زي الوراثة العائلية 👨‍👩‍👧‍👦 — الابن بيورث صفات أبوه ويضيف عليها حاجات جديدة! 🧬",
+    "content": {
+      "overview": "الـ Inheritance بيعمل علاقة 'is-a' بين الكلاسes. لو `Cat` يرث من `Animal`، يبقى كل Cat هو Animal. بنستخدم `:` عشان نعبر عن الـ Inheritance في C#.",
+      "sections": [
+        {
+          "title": "Base Class و Derived Class",
+          "content": "الـ Base Class (أو Parent Class) هو الكلاس اللي بيتورث منه. الـ Derived Class (أو Child Class) هو اللي بيرث. أي أوبجekt من الـ Derived Class هو أوتوماتيك أوبجekt من الـ Base Class.",
+          "code": "class Person {  // Base Class\n    public string name;\n    public int maxSpeed;\n    \n    public void Run(int speed) {\n        Console.WriteLine(name + \" is running at \" + speed);\n    }\n}\n\nclass Player : Person {  // Derived Class\n    public int maxForce;\n    \n    public void Shoot(int force) {\n        Console.WriteLine(name + \" is shooting!\");\n    }\n}\n\nPlayer p = new Player();\np.name = \"Salah\";  // ورث name من Person\np.Run(10);           // ورث Run من Person\np.Shoot(5);          // method خاصة بـ Player"
+        },
+        {
+          "title": "Code Reusability",
+          "content": "الـ Inheritance بيسمح بإعادة استخدام الكود. بدل ما تكرر نفس الـ Fields و Methods في كلاسes مختلفة، حطهم في Base Class واحد وخلي الباقي يرثوا منه.",
+          "code": "// بدل ما تكرر id و balance في كل حساب...\nclass Account {\n    public string id;\n    public float balance;\n}\n\nclass CheckingAccount : Account {\n    public float monthlyFees;\n}\n\nclass SavingAccount : Account {\n    public float interestRate;\n}"
+        },
+        {
+          "title": "Abstract Classes",
+          "content": "الـ Abstract Class هو كلاس مينفعش نعمل منه أوبجكتs. بيستخدم كـ Base Class بس. ممكن يحتوي على Abstract Methods (مش معمولها Implement) اللي لازم الـ Derived Classes تعملها Override.",
+          "code": "abstract class Account {\n    public string id;\n    public float balance;\n    \n    public abstract void CalculateInterest();\n}\n\nclass SavingAccount : Account {\n    public override void CalculateInterest() {\n        balance *= 1.05f;\n    }\n}"
+        },
+        {
+          "title": "Sealed Classes",
+          "content": "الـ Sealed Class هو كلاس ممنوع أي كلاس تاني يرث منه. بنستخدم الكلمة `sealed` عشان نمنع الـ Inheritance.",
+          "code": "sealed class FinalClass {\n    // محدش يقدر يرث من هنا!\n}\n\n// class MyClass : FinalClass  // ❌ Error!"
+        },
+        {
+          "title": "Constructor Calling Order",
+          "content": "لما بنعمل أوبجekt من Derived Class، الـ Constructor بتاع الـ Base Class بيتنفذ الأول، وبعدين الـ Constructor بتاع الـ Derived Class. ده عشان الأب لازم يتكون قبل الابن!",
+          "code": "class Account {\n    public Account() {\n        Console.WriteLine(\"Account constructor\");\n    }\n}\n\nclass CheckingAccount : Account {\n    public CheckingAccount() {\n        Console.WriteLine(\"CheckingAccount constructor\");\n    }\n}\n\n// Output:\n// Account constructor\n// CheckingAccount constructor"
+        },
+        {
+          "title": "base Keyword",
+          "content": "الـ `base` keyword بيستخدم عشان نستدعي Constructor أو Method من الـ Base Class. مختلف عن `this` اللي بيستدعي حاجات من نفس الكلاس.",
+          "code": "class Account {\n    public Account(string id, int balance) {\n        this.id = id;\n        this.balance = balance;\n    }\n}\n\nclass CheckingAccount : Account {\n    public float monthlyFees;\n    \n    public CheckingAccount(string id, int balance, float fees)\n        : base(id, balance) {  // بيستدعي Constructor الأب\n        monthlyFees = fees;\n    }\n}"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا نجم… Inheritance زي العيلة 👨‍👩‍👧‍👦. الأب (Base Class) بيورث صفاته لعياله (Derived Classes). العيل ممكن تورث لون العين من أبوها وطولها من أمها، وتضيف صفات جديدة زي موهبتها الخاصة. الـ Abstract Class زي الأب اللي بيقول \"لازم كل عيالي يتعلموا السباحة!\" بس هو نفسه مش بيسبح — بس بيحدد القاعدة. الـ Sealed Class زي العيلة اللي قفلت باب الخلفة: \"كفاية كده، ممنوع ورث تاني!\" 🚫",
+    "analogy": "تخيل إنك بتبني عربيات 🚗. الـ Base Class زي الهيكل الأساسي: كل عربية لازم ليها هيكل ومحرك وعجلات. الـ Derived Classes زي الموديلات المختلفة: عربية السباق بترث الهيكل الأساسي وتضيف Nitro Boost. عربية العيلة بترث نفس الهيكل وتضيف مقاعد أطفال. الـ Abstract Class زي مخطط العarabية: مينفعش تسوق المخطط، بس كل عربية لازم تتبع المخطط! 📐",
+    "funnyNote": "Base Class سأل Derived Class: \"إنت شبهني ليه؟\" Derived رد: \"عشاني ورثت منك يا بابا!\" Base Class قال: \"طيب متنساش تعمل Override للـ GetAllowance method!\" 💰😂"
+  },
+  {
+    "id": 8,
+    "title": "الـ Polymorphism والـ Interfaces",
+    "subtitle": "Polymorphism & Interfaces",
+    "number": 8,
+    "icon": "Sparkles",
+    "status": "locked",
+    "keyPoints": ["virtual: دالة ممكن تعمل Override", "override: بدل التنفيذ الأصلي", "Interface: عقد لازم تطبقه", "Multiple Inheritance بالـ Interfaces"],
+    "progress": 0,
+    "summary": "Polymorphism يعني \"اسم واحد، أشكال كتير\" — أوبجكتs مختلفة ممكن تستجيب لنفس الـ Method بطرق مختلفة. الـ Interface هو blueprint للكلاس بيحدد Methods لازم تتطبق.",
+    "simplifiedSummary": "Polymorphism زي مأذون يقول \"أنتم الآن زوجان\" 💒 — نفس الكلمة بس كل زوج بيفهمها بطريقته! Interface زي العقد — بتوقعه ولاّزم تلتزم ببنوده! 📜",
+    "content": {
+      "overview": "الـ Polymorphism هو القدرة إن أوبجكتs من أنواع مختلفة تستجيب لنفس الـ Method Call بطرق مختلفة. بنستخدم `virtual` في الـ Base Class و `override` في الـ Derived Class. الـ Interface بيحتوي على Method declarations من غير Implementation.",
+      "sections": [
+        {
+          "title": "Hiding Inherited Members",
+          "content": "لو عملت Method بنفس اسم Method موجود في الـ Base Class من غير `override`، الـ Method الجديدة هتخبي (Hide) الموروثة. الـ `new` keyword بيوضح إنك عايز تخبي.",
+          "code": "class Animal {\n    public void Speak() {\n        Console.WriteLine(\"Animal speaks\");\n    }\n}\n\nclass Cat : Animal {\n    public new void Speak() {  // Hiding\n        Console.WriteLine(\"Meow Meow\");\n    }\n}\n\nCat c = new Cat();\nc.Speak();  // Meow Meow"
+        },
+        {
+          "title": "virtual و override",
+          "content": "`virtual` بتخلي الـ Method قابلة للـ Override. `override` بتستبدل التنفيذ الموروث. دي الطريقة الصحيحة للـ Polymorphism.",
+          "code": "class Animal {\n    public virtual void Speak() {\n        Console.WriteLine(\"Animal speaks\");\n    }\n}\n\nclass Cat : Animal {\n    public override void Speak() {\n        Console.WriteLine(\"Meow Meow\");\n    }\n}\n\nclass Dog : Animal {\n    public override void Speak() {\n        Console.WriteLine(\"Woof Woof\");\n    }\n}\n\nAnimal a = new Cat();\na.Speak();  // Meow Meow - Polymorphism!\nAnimal b = new Dog();\nb.Speak();  // Woof Woof"
+        },
+        {
+          "title": "Polymorphism in Action",
+          "content": "الـ Polymorphism بيشتغل لما نستخدم Base Class Reference عشان نتعامل مع Derived Class Objects. الـ Method اللي هيترنى بيتحدد في Run-time.",
+          "code": "static void PlaySound(Animal animal) {\n    animal.Speak();  // Polymorphism!\n}\n\nCat cat = new Cat();\nDog dog = new Dog();\n\nPlaySound(cat);  // Meow Meow\nPlaySound(dog);  // Woof Woof"
+        },
+        {
+          "title": "Interfaces",
+          "content": "الـ Interface هو Contract — بيحدد Methods لازم الكلاس يطبقها. كل Method في الـ Interface من غير Body ومن غير Access Modifier. الكلاس اللي بيستخدم الـ Interface لازم يطبق كل Methods.",
+          "code": "interface IAnimal {\n    void Speak();\n    void Eat();\n}\n\nclass Cat : IAnimal {\n    public void Speak() {\n        Console.WriteLine(\"Meow\");\n    }\n    \n    public void Eat() {\n        Console.WriteLine(\"Cat is eating\");\n    }\n}"
+        },
+        {
+          "title": "Multiple Inheritance بالـ Interfaces",
+          "content": "C# مبيسمحش بـ Multiple Inheritance من Classes (كلاس يرث من أكتر من كلاس). بس ممكن كلاس يرث من كلاس واحد ويعمل Implement لأكتر من Interface.",
+          "code": "interface IFlyable {\n    void Fly();\n}\n\ninterface ISwimmable {\n    void Swim();\n}\n\nclass Duck : Animal, IFlyable, ISwimmable {\n    public void Fly() {\n        Console.WriteLine(\"Duck is flying\");\n    }\n    \n    public void Swim() {\n        Console.WriteLine(\"Duck is swimming\");\n    }\n}"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا يسطا… Polymorphism يعني نفس الزرار بيعمل حاجات مختلفة حسب الجهاز! 🔘 تخيل زرار 'شغل' — على التلفزيون بيفتح شاشة، على المكيف بيبرد، على المروحة بتدور. نفس الـ Method `Speak()` — القطة بتقول 'Meow'، الكلب بيقول 'Woof'، البطة بتقول 'Quack'! الـ Interface زي توصيات الشيف: 'كل طباخ لازم يعرف يسلق ويقلي' — بس ماتقوللوش إزاي، سيبه يطبق بطريقته! 👨‍🍳",
+    "analogy": "تخيلك في أوركسترا 🎵. الـ Conductor (المايسترو) بيرفع عصايته وكل موسيقي بيلعب آلة مختلفة: الكمان بيعزف نوتة، الطبلة بيدق إيقاع، البيانو بيعزف أكورد. نفس الإشارة (Method Call) بس كل آلة (Object) بتستجيب بطريقتها. الـ Interface زي قائمة المطلوبات في المطعم: 'كل طبق لازم يكون فيه بروتين وخضار' — بس الشيف حر في إزاي يطبخهم! 🎻🥁🎹",
+    "funnyNote": "Cat و Dog و Duck دخلوا مطعم. الـ Waiter سأل: إيه الأوردر؟ Cat قالت 'Meow'، Dog قال 'Woof'، Duck قالت 'Quack'. الـ Waiter رد: 'أنا مش فاهم Polymorphism أوي بس كلهم طلبوا نفس الـ Interface!' 🍽️🐱🐶🦆"
+  },
+  {
+    "id": 9,
+    "title": "الـ Enumerations والـ Structures",
+    "subtitle": "Enumerations & Structures",
+    "number": 9,
+    "icon": "ListOrdered",
+    "status": "locked",
+    "keyPoints": ["Enum: نوع بيانات لقيم مسماة", "Struct: Value Type زي الكلاس بس أخف", "Struct vs Class: اختلافات مهمة", "متى تستخدم Struct بدل Class"],
+    "progress": 0,
+    "summary": "الـ Enumeration (enum) هو نوع بيانات بيحتوي على قيم مسماة. الـ Structure (struct) زي الكلاس بس هو Value Type مش Reference Type — بيخزن في الـ Stack وبيُنسخ بالكامل لما ت Assignment.",
+    "simplifiedSummary": "Enum زي لائحة الـ Menu 📋 — فيه خيارات محددة تختار منها. Struct زي الكلاس بس أخف وأسرع — زي الفرق بين العربية والموتوسيكل! 🏍️",
+    "content": {
+      "overview": "الـ Enum بيسمح بتعريف نوع بيانات بقيم ثابتة مسماة. الـ Struct هو Value Type بيقدر يحتوي على Fields و Methods زي الكلاس، بس بيتخزن في الـ Stack.",
+      "sections": [
+        {
+          "title": "Enumerations",
+          "content": "الـ Enum بيعمل نوع بيانات جديد بقيم ثابتة. مفيد لما عندك مجموعة قيم محددة زي الأيام، الألوان، أو الحالات.",
+          "code": "enum Color {\n    Red,\n    Green,\n    Yellow\n}\n\nColor myColor = Color.Red;\n\nenum Gender {\n    Male,\n    Female\n}\n\nclass Person {\n    public string name;\n    public Gender gender;\n}\n\nPerson p = new Person();\np.name = \"Sahar\";\np.gender = Gender.Female;"
+        },
+        {
+          "title": "Structures",
+          "content": "الـ Struct بيستخدم الكلمة `struct` بدل `class`. هو Value Type — يعني بيتخزن في الـ Stack وبيتنسخ بالكامل لما تعمل Assignment. مينفعش يرث من struct تاني ولا يحتوي على Virtual Methods.",
+          "code": "public struct Point {\n    public double X { get; set; }\n    public double Y { get; set; }\n    \n    public Point(double x, double y) {\n        X = x; Y = y;\n    }\n    \n    public void Print() {\n        Console.WriteLine($\"({X}, {Y})\");\n    }\n}\n\nPoint p1 = new Point(5, 12);\nPoint p2 = p1;  // نسخة كاملة!\np2.X = 70;\np1.Print();  // (5, 12) - ماتأثرش!"
+        },
+        {
+          "title": "Struct vs Class",
+          "content": "الفرق الرئيسي: Struct هو Value Type (في الـ Stack) و Class هو Reference Type (في الـ Heap). لما تعمل Assignment لـ Struct بيتعمل Copy كامل. لما تعمل Assignment لـ Class بيتنسخ الـ Reference بس.",
+          "code": "// Class - Reference Type\nclass PointClass {\n    public int X, Y;\n}\n\nPointClass c1 = new PointClass();\nc1.X = 5;\nPointClass c2 = c1;  // نسخة الـ Reference\nc2.X = 10;\nConsole.WriteLine(c1.X);  // 10 - اتأثر!\n\n// Struct - Value Type\nstruct PointStruct {\n    public int X, Y;\n}\n\nPointStruct s1 = new PointStruct();\ns1.X = 5;\nPointStruct s2 = s1;  // نسخة كاملة\ns2.X = 10;\nConsole.WriteLine(s1.X);  // 5 - ماتأثرش!"
+        },
+        {
+          "title": "متى تستخدم Struct",
+          "content": "استخدم Struct لما:\n- البيانات صغيرة (أقل من 16 بايت)\n- مش محتاج Inheritance\n- Behavior مش معقد\n- مش محتاج تتكرر كتير (لو هتعمل Assignment كتير، Struct ممكن يبقى أبطأ عشان النسخ)\n\nاستخدم Class لكل حاجة تانية!"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا معلم… Enum زي لائحة الأصناف في المطعم: مفيش 'طبق عشوائي' — لازم تختار من اللائحة! 🍽️ Struct زي الشنطة — لما تديها لحد، بتديها نسخة كاملة مش مجرد عنوان الشنطة. Class زي البيت — لما تقول 'أنا عايز نفس بيتك'، مش هتبني بيت جديد، هتدي العنوان بس! 🏠",
+    "analogy": "تخيل Enum زي لائحة حالة الطقس 🌤️ — مفيش 'طقس غريب'! لازم يكون: مشمس، ماطر، غائم، أو ثلج. Struct زي الهدية 🎁 — لما تديها لحد، بيديها نسخة كاملة مش مجرد صورة. Class زي المنزل 🏠 — لما تقول 'عايز نفس بيتك'، بتدي العنوان مش بتبني بيت جديد! الفرق في الـ Assignment: Struct = نسخة كاملة، Class = نسخة العنوان! 📋",
+    "funnyNote": "Enum قال لـ int: \"إنت فوضوي أوي — قيمك ملهاش اسم!\" int رد: \"وإنت rigid أوي — مفيش مجال للإبداع!\" Struct دخلت قالت: \"أنا الوسط — صغيرة ومنظمة!\" 🎯😂"
+  },
+  {
+    "id": 10,
+    "title": "الـ Delegates والـ Events",
+    "subtitle": "Delegates & Events",
+    "number": 10,
+    "icon": "Link",
+    "status": "locked",
+    "keyPoints": ["Delegate: نوع بيشاور على Method", "Multicast: Delegate يشاور على أكتر من Method", "Events: Actions بيستجاب ليها", "Event Handlers: الدوال اللي بتتنفذ لما الـ Event يحصل"],
+    "progress": 0,
+    "summary": "الـ Delegate هو نوع بيمثل Reference لـ Method. لما تعمل Instance من Delegate، ممكن تربطه بأي Method بنفس الـ Signature. الـ Events هي User Actions زي Click أو Key Press، والـ Event Handlers هي Methods بتتنفذ لما الـ Event يحصل.",
+    "simplifiedSummary": "Delegate زي الرقم اللي بتدهولك عشان تتصل بحد 📞. Event زي الجرس — لما يدق، حد لازم يستجاب! 🔔",
+    "content": {
+      "overview": "الـ Delegate بيسمح لنا نمرر Methods كـ Parameters لـ Methods تانية. الـ Event بيربط Action (زي Click) بـ Event Handler (Method بتتنفذ كرد فعل).",
+      "sections": [
+        {
+          "title": "Delegates",
+          "content": "الـ Delegate بيعرف نوع Method معينة (بـ parameters و return type معينة). لما تعمل Instance منه، ممكن تربطه بأي Method بنفس الـ Signature.",
+          "code": "delegate int MyDelegate(int x, int y);\n\nclass Program {\n    static int Add(int a, int b) {\n        return a + b;\n    }\n    \n    static int Multiply(int a, int b) {\n        return a * b;\n    }\n    \n    static void Execute(MyDelegate del, int a, int b) {\n        Console.WriteLine(del(a, b));\n    }\n    \n    static void Main() {\n        MyDelegate d = new MyDelegate(Add);\n        Console.WriteLine(d(7, 8));  // 15\n        \n        Execute(Multiply, 5, 6);  // 30\n    }\n}"
+        },
+        {
+          "title": "Multicast Delegates",
+          "content": "الـ Delegate ممكن يشاور على أكتر من Method في نفس الوقت! بنستخدم `+=` عشان نضيف Method و `-=` عشان نشيله. لما نستدعي الـ Delegate، كل Methods بتترن بالتتابع.",
+          "code": "delegate void Notify(string message);\n\nclass Program {\n    static void SendEmail(string msg) {\n        Console.WriteLine(\"Email: \" + msg);\n    }\n    \n    static void SendSMS(string msg) {\n        Console.WriteLine(\"SMS: \" + msg);\n    }\n    \n    static void Main() {\n        Notify notify = SendEmail;\n        notify += SendSMS;\n        \n        notify(\"Hello!\");\n        // Output:\n        // Email: Hello!\n        // SMS: Hello!\n        \n        notify -= SendEmail;\n        notify(\"Bye!\");\n        // Output: SMS: Bye!\n    }\n}"
+        },
+        {
+          "title": "Events",
+          "content": "الـ Event بيعلن إن حاجة حصلت (زي Click أو State Change). الـ Event Handlers (Delegates) بتتنفذ لما الـ Event يحصل. الـ Events بيستخدموا `+=` بس (مش `=`) عشان Security.",
+          "code": "delegate void StateChangedHandler(string oldState, string newState);\n\nclass PowerSwitch {\n    public event StateChangedHandler StateChanged;\n    public string CurrentState { get; private set; }\n    \n    public void TurnOn() {\n        if (CurrentState != \"On\") {\n            string old = CurrentState;\n            CurrentState = \"On\";\n            StateChanged?.Invoke(old, \"On\");\n        }\n    }\n}\n\nclass Program {\n    static void Main() {\n        PowerSwitch p = new PowerSwitch();\n        p.StateChanged += OnStateChanged;\n        p.TurnOn();\n    }\n    \n    static void OnStateChanged(string old, string newState) {\n        Console.WriteLine($\"State changed from {old} to {newState}\");\n    }\n}"
+        },
+        {
+          "title": "Built-in EventHandler",
+          "content": "C# عنده نوع جاهز اسمه `EventHandler` مالوش Parameters، و `EventHandler<T>` بياخد Parameter واحد. دي الطريقة المفضلة في التطبيقات الحديثة.",
+          "code": "class Button {\n    public event EventHandler Clicked;\n    \n    public void Click() {\n        Clicked?.Invoke(this, EventArgs.Empty);\n    }\n}\n\nclass Program {\n    static void Main() {\n        Button btn = new Button();\n        btn.Clicked += (sender, e) => {\n            Console.WriteLine(\"Button clicked!\");\n        };\n        btn.Click();\n    }\n}"
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا نجم… Delegate زي الرقم اللي بتدهولك عشان تتصل بحد 📞. Multicast Delegate زي Group Chat — رسالة واحدة توصل لكتير! Event زي الجرس 🔔 — لما يدق، كل اللي مسجلين (Handlers) بيستجيبوا. EventHandler زي الـ Receptionist اللي بيوصل المكالمات للأشخاص المناسبين! 👩‍💼",
+    "analogy": "تخيل Delegate زي التوصيلة 🚕 — بتقول للسواق 'وديني للمكان الفلاني' بس مش بتقوله إزاي. Multicast Delegate زي الباص 🚌 — بيوصل نفس الرسالة (المسافرين) لأكتر من محطة. Event زي جرس الإنذار 🔥 — لما يدق، كل فرق الإطفاء (Handlers) بتتحرك! Event Handler زي الـ Firefighter — بيستنى الإشارة عشان يتحرك! 🚒",
+    "funnyNote": "Delegate اتصل بـ Method قال: \"إزيك يا صاحبي؟\" Method رد: \"إنت مين؟!\" Delegate قال: \"أنا بس Reference — أنا اللي بربط الناس ببعض!\" 📞😂"
+  }
+]

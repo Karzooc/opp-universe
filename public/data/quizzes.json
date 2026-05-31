@@ -1,0 +1,652 @@
+[
+  {
+    "chapterId": 1,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إيه الفرق بين Class و Object في OOP؟",
+        "options": [
+          "الكلاس هو القالب (Blueprint) والأوبجكت هو نسخة حقيقية منه",
+          "الكلاس أصغر من الأوبجكت",
+          "مفيش فرق بينهم",
+          "الأوبجكت بيتحط في الـ Stack والكلاس في الـ Heap"
+        ],
+        "correct": 0,
+        "explanation": "صح يا معلم! الكلاس هو القالب اللي بيحدد الصفات والسلوكيات، والأوبجكت هو Instance حقيقي من الكلاس. زي ما القالب بيحدد شكل الكيكة بس الكيكة هي اللي نقدر ناكلها! 🎂"
+      },
+      {
+        "id": 2,
+        "question": "أي نوع من المتغيرات بيخزن العنوان (Address) في الميموري؟",
+        "options": [
+          "Value Types زي int و double",
+          "Reference Types زي الكلاسes والـ Arrays",
+          "Static Variables",
+          "Local Variables"
+        ],
+        "correct": 1,
+        "explanation": "صح! Reference Types بيخزنوا عنوان الأوبجكت في الـ Heap، مش القيمة نفسها. Value Types بيخزنوا القيمة مباشرة في الميموري. 📍"
+      },
+      {
+        "id": 3,
+        "question": "إزاي بنعمل أوبجكت من كلاس اسمه Car في C#؟",
+        "options": [
+          "Car myCar = Car();",
+          "Car myCar = new Car();",
+          "new Car = myCar;",
+          "Car.create();"
+        ],
+        "correct": 1,
+        "explanation": "صح يا يسطا! بنستخدم `new` keyword عشان نعمل Instance جديد من الكلاس. ده بيحجز ميموري في الـ Heap وينادي الـ Constructor. 🚗"
+      },
+      {
+        "id": 4,
+        "question": "الـ Stack بيستخدم لـ:",
+        "options": [
+          "المتغيرات المحلية (Local Variables) والـ Value Types",
+          "الأوبجكتs اللي بنعملها بـ new",
+          "الكود نفسه (Program Instructions)",
+          "المتغيرات العامة (Global Variables)"
+        ],
+        "correct": 0,
+        "explanation": "صح! الـ Stack بيخزن المتغيرات المحلية والـ Value Types. الأوبجكتس بـ new بتروح في الـ Heap. والكود بيكون في الـ Text Section. 📚"
+      },
+      {
+        "id": 5,
+        "question": "لما تعمل `Car c2 = c1;` (where c1 is a reference type)، إيه اللي بيحصل؟",
+        "options": [
+          "بيتعمل نسخة كاملة من الأوبجكت",
+          "c2 بتشاور على نفس الأوبجكت اللي c1 بيشاور عليه",
+          "c1 بيتمسح",
+          "Error بيحصل"
+        ],
+        "correct": 1,
+        "explanation": "صح! لما تعمل Assignment لـ Reference Type، أنت بنسخ الـ Reference (العنوان) مش الأوبجكت نفسه. فـ c1 و c2 دلوقتي بيشاوروا على نفس الأوبجكت! 🔗"
+      }
+    ]
+  },
+  {
+    "chapterId": 2,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إيه هو الـ Field في الكلاس؟",
+        "options": [
+          "دالة بتعمل حاجة",
+          "متغير جوه الكلاس بيخزن بيانات",
+          "نوع من الكلاس",
+          "طريقة للوصول للبيانات"
+        ],
+        "correct": 1,
+        "explanation": "صح! الـ Field هو المتغير اللي جوه الكلاس. هو اللي بيصف الحالة (State) بتاعت الأوبجكت. زي `name` أو `score` في كلاس `Player`. 📊"
+      },
+      {
+        "id": 2,
+        "question": "إيه الفرق بين Static Method و Instance Method؟",
+        "options": [
+          "Static Method بتاعة الكلاس نفسه، Instance Method بتاعة الأوبجكت",
+          "مفيش فرق",
+          "Static Method أسرع دايماً",
+          "Instance Method مش بتشتغل"
+        ],
+        "correct": 0,
+        "explanation": "صح يا نجم! Static Method بتتبع للكلاس نفسه ومش محتاجة أوبجكت عشان تشتغل. Instance Method لازم تعمل أوبجكت الأول. 🏭"
+      },
+      {
+        "id": 3,
+        "question": "لو عملت Field `private`، مين يقدر يوصله؟",
+        "options": [
+          "أي حد",
+          "بس جوه نفس الكلاس",
+          "الكلاسات اللي بتورث",
+          "بس الـ Main Method"
+        ],
+        "correct": 1,
+        "explanation": "صح! `private` يعني بس الكلاس نفسه يقدر يوصل للـ Field. دي أساس الـ Encapsulation — نخبي البيانات ونتحكم في الوصول ليها. 🔒"
+      },
+      {
+        "id": 4,
+        "question": "إيه هو الـ Encapsulation؟",
+        "options": [
+          "تغليف البيانات وإخفاؤها عن الوصول المباشر",
+          "عمل Inheritance من كلاس تاني",
+          "تغيير شكل الكلاس",
+          "حذف الكلاس"
+        ],
+        "correct": 0,
+        "explanation": "صح! Encapsulation يعني نخبي الـ Fields (نخليهم private) ونخلي الوصول ليهم عن طريق Public Methods بس. ده بيحمي البيانات من القيم الغلط. 🛡️"
+      },
+      {
+        "id": 5,
+        "question": "Static Class مينفعش:",
+        "options": [
+          "تحتوي على Static Methods",
+          "ننعمل منها أوبجكت",
+          "تحتوي على Static Fields",
+          "نستدعي Methods بتاعتها مباشرة"
+        ],
+        "correct": 1,
+        "explanation": "صح! Static Class مينفعش نعمل منها أوبجكت. كل أعضاءها لازم تكون Static. بنستخدمها كـ Container للـ Utility Methods. 📦"
+      }
+    ]
+  },
+  {
+    "chapterId": 3,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إمتى الـ Constructor بيتنفذ؟",
+        "options": [
+          "لما الكلاس يتعرّف",
+          "لما الأوبجكت يتعمل بـ `new`",
+          "لما البرنامج يقفل",
+          "كل ما نستدعي Method"
+        ],
+        "correct": 1,
+        "explanation": "صح! الـ Constructor بيتنفذ أوتوماتيك لما نعمل أوبجكت بـ `new`. هو بيحط القيم الابتدائية. 🏗️"
+      },
+      {
+        "id": 2,
+        "question": "إيه استخدام `this` keyword في Constructor؟",
+        "options": [
+          "تستدعي Constructor تاني",
+          "تفرق بين Field و Parameter بنفس الاسم",
+          "تعمل أوبجكت جديد",
+          "كل الإجابات صح"
+        ],
+        "correct": 3,
+        "explanation": "صح! `this` ليها استخدامات كتير: بتفرق بين Field و Parameter، بتستدعي Constructor تاني (Constructor Initializer)، وبتشاور على الأوبجكت الحالي. 🎯"
+      },
+      {
+        "id": 3,
+        "question": "Overloaded Constructors يعني:",
+        "options": [
+          "أكتر من Constructor بنفس الاسم بس بـ parameters مختلفة",
+          "Constructor بيتنفذ أكتر من مرة",
+          "Error في الكود",
+          "Constructor بيورث من Constructor تاني"
+        ],
+        "correct": 0,
+        "explanation": "صح! Overloaded Constructors يعني أكتر من Constructor بنفس اسم الكلاس بس كل واحد بياخد parameters مختلفة. ده بيدي مرونة في إزاي نعمل الأوبجكت. 🔧"
+      },
+      {
+        "id": 4,
+        "question": "Garbage Collector في C# بيعمل إيه؟",
+        "options": [
+          "بيمسح الأوبجكتs اللي مبقتش مستخدمة أوتوماتيك",
+          "بيحجز ميموري جديد",
+          "بيسرع البرنامج",
+          "بيفتح Files"
+        ],
+        "correct": 0,
+        "explanation": "صح! Garbage Collector بيدور على الأوبجكتs اللي مفيش Reference ليها ويمسحهم عشان يفضي ميموري. مش محتاجين `delete` زي C++. 🗑️"
+      },
+      {
+        "id": 5,
+        "question": "الـ Destructor بيتنفذ إمتى؟",
+        "options": [
+          "لما الأوبجكت بيتمسح من الميموري",
+          "لما البرنامج يبدأ",
+          "لما نستدعيه يدوياً",
+          "كل يوم جمعة"
+        ],
+        "correct": 0,
+        "explanation": "صح! الـ Destructor بيتنفذ لما الأوبجekt بيتمسح (by Garbage Collector). مش بنقدر نستدعيه يدوياً. بنستخدمه عشو ننظف Resources. ⚰️"
+      }
+    ]
+  },
+  {
+    "chapterId": 4,
+    "questions": [
+      {
+        "id": 1,
+        "question": "لما تمرر Reference Type لـ Method (without ref)، إيه اللي بيتمرر؟",
+        "options": [
+          "نسخة كاملة من الأوبجكت",
+          "نسخة من الـ Reference (العنوان)",
+          "مفيش حاجة بتتمرر",
+          "الـ Method نفسها"
+        ],
+        "correct": 1,
+        "explanation": "صح! بيتمرر نسخة من الـ Reference (العنوان). يعني الـ Parameter الجديد بيشاور على نفس الأوبجكت. لو غيرت جوه الـ Method، الأوبجكت الأصلي هيتغير. 📍"
+      },
+      {
+        "id": 2,
+        "question": "إيه الفرق بين Pass by Reference و Pass by Reference using `ref`؟",
+        "options": [
+          "مفيش فرق",
+          "ref بيخليك تغير الـ Reference نفسه",
+          "ref أبطأ",
+          "ref مش بتشتغل مع Objects"
+        ],
+        "correct": 1,
+        "explanation": "صح! لما تستخدم `ref`، الـ Method بتقدر تغير الـ Reference نفسه — يعني تخلي يشاور على أوبجekt مختلف. من غير `ref`، ممكن تغير محتوى الأوبجekt بس مش الـ Reference. 🔄"
+      },
+      {
+        "id": 3,
+        "question": "`params` keyword بتعمل إيه؟",
+        "options": [
+          "بتخلي Method تقبل عدد متغير من الـ Arguments",
+          "بتخلي Parameter إجباري",
+          "بتخلي Method ترجع أكتر من قيمة",
+          "بتعمل Array جديد"
+        ],
+        "correct": 0,
+        "explanation": "صح! `params` بتخلي Method تقبل أي عدد من الـ Arguments. الـ Arguments بيتجمعوا في Array أوتوماتيك. مفيدة جداً لـ Methods زي `Sum()`! 🔢"
+      },
+      {
+        "id": 4,
+        "question": "Array of Objects بيخزن إيه؟",
+        "options": [
+          "نسخ كاملة من الأوبجكتs",
+          "References للأوبجكتs",
+          "بس أسماء الكلاسes",
+          "مفيش حاجة"
+        ],
+        "correct": 1,
+        "explanation": "صح! Array of Objects بيخزن References (عناوين) للأوبجكتs اللي في الـ Heap. لازم تعمل كل أوبجekt بـ `new` قبل ما تحطه في الـ Array. 📚"
+      },
+      {
+        "id": 5,
+        "question": "Method ممكن ترجع Object كامل؟",
+        "options": [
+          "آه، ممكن تعمل Factory Methods",
+          "لأ، Methods بترجع بس primitive types",
+          "بس لو الكلاس Static",
+          "بس في Java"
+        ],
+        "correct": 0,
+        "explanation": "صح! Method ممكن ترجع أي نوع، حتى Object كامل. ده مفيد لـ Factory Methods اللي بتعمل وترجع أوبجكتs جديدة. 🏭"
+      }
+    ]
+  },
+  {
+    "chapterId": 5,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إيه هو الـ Property في C#؟",
+        "options": [
+          "متغير عام (public field)",
+          "ميكانيزم للوصول للـ Private Field بشكل آمن",
+          "نوع من الـ Methods",
+          "كلاس خاص"
+        ],
+        "correct": 1,
+        "explanation": "صح! Property بتدينا طريقة مرنة للوصول للـ Private Fields. ليها `get` (للقراءة) و `set` (للكتابة). بتحمي البيانات وتتحكم في الوصول. 🛡️"
+      },
+      {
+        "id": 2,
+        "question": "Automatic Property يعني:",
+        "options": [
+          "C# بيعمل الـ Field الخاص أوتوماتيك",
+          "Property بتشتغل لوحدها",
+          "Property مش محتاجة Implementation",
+          "كل الإجابات صح"
+        ],
+        "correct": 0,
+        "explanation": "صح! Automatic Property يعني C# بيعمل الـ Backing Field أوتوماتيك. بنكتب بس `{ get; set; }` وC# بيهندل الباقي. ⚡"
+      },
+      {
+        "id": 3,
+        "question": "Read-Only Property يعني:",
+        "options": [
+          "بس `get` Accessor",
+          "بس `set` Accessor",
+          "`get` و `set`",
+          "مفيش Accessor"
+        ],
+        "correct": 0,
+        "explanation": "صح! Read-Only Property = `get` بس. يعني تقدر تقرأ القيمة بس مش تكتبها. ممكن تعملها `private set` لو عايز تكتب جوه الكلاس بس. 👁️"
+      },
+      {
+        "id": 4,
+        "question": "إيه هو الـ Indexer؟",
+        "options": [
+          "بيسمح لك تتعامل مع الأوبجكت زي Array",
+          "بيخزن البيانات في Array",
+          "نوع من الـ Properties",
+          "Method للبحث"
+        ],
+        "correct": 0,
+        "explanation": "صح! Indexer بيخلي الأوبجكت يتعامل زي Array. بنستخدم `this[int index]` عشان نعرفه. مفيد لـ Classes اللي بتحتوي Collections. 📇"
+      },
+      {
+        "id": 5,
+        "question": "ممكن تعمل أكتر من Indexer في نفس الكلاس؟",
+        "options": [
+          "آه، بـ parameters مختلفة (Overloading)",
+          "لأ، indexer واحد بس",
+          "بس لو الـ Class Static",
+          "بس في C++"
+        ],
+        "correct": 0,
+        "explanation": "صح! زي الـ Methods، ممكن تعمل Overloaded Indexers — أكتر من Indexer بنفس الاسم بس بـ parameters مختلفة (int, string, إلخ). 🔄"
+      }
+    ]
+  },
+  {
+    "chapterId": 6,
+    "questions": [
+      {
+        "id": 1,
+        "question": "Operator Overloading بيسمح بـ:",
+        "options": [
+          "تغيير معنى الـ Operators للـ User-Defined Types",
+          "حذف الـ Operators",
+          "إضافة Operators جديدة للغة",
+          "تسريع البرنامج"
+        ],
+        "correct": 0,
+        "explanation": "صح! Operator Overloading بيسمح نعيد تعريف Operators زي +, -, == للـ User-Defined Types. يعني ممكن نخلّي `+` بين اتنين Battery يجمع طاقتهم! ⚡"
+      },
+      {
+        "id": 2,
+        "question": "الـ Overloaded Operator Method لازم تكون:",
+        "options": [
+          "`static` وبتستخدم كلمة `operator`",
+          "`public` بس",
+          "`virtual`",
+          "`abstract`"
+        ],
+        "correct": 0,
+        "explanation": "صح! لازم تكون `static` وبتستخدم `operator` keyword متبوعة بـ symbol الـ Operator. مثلاً: `public static Battery operator +(Battery a, Battery b)`. ➕"
+      },
+      {
+        "id": 3,
+        "question": "لو عملت Overload لـ `==`، إيه اللي لازم تعمله كمان؟",
+        "options": [
+          "!= أيضاً",
+          "`>`",
+          "`<`",
+          "مفيش حاجة لازم"
+        ],
+        "correct": 0,
+        "explanation": "صح! الـ Comparison Operators لازم تتعمل في pairs: `==` مع `!=`، و `<` مع `>`. ده قاعدة في C# عشان يفضل المنطق متناسق. ⚖️"
+      },
+      {
+        "id": 4,
+        "question": "أي Operator مينفعش نعمله Overload في C#؟",
+        "options": [
+          "`=` (Assignment)",
+          "`+`",
+          "`-`",
+          "`==`"
+        ],
+        "correct": 0,
+        "explanation": "صح! `=`, `.`, `?:`, `->`, `new`, `is`, `sizeof`, `typeof` مش ممكن نعملهم Overload. كمان `&&` و `||` الشرطيين مش مباشرة. 🚫"
+      },
+      {
+        "id": 5,
+        "question": "Unary Operator بياخد كام operand؟",
+        "options": [
+          "واحد",
+          "اتنين",
+          "تلاتة",
+          "أي عدد"
+        ],
+        "correct": 0,
+        "explanation": "صح! Unary Operators (++, --, !, ~) بياخدوا operand واحد. Binary Operators (+, -, *, /) بياخدوا اتنين. 🔢"
+      }
+    ]
+  },
+  {
+    "chapterId": 7,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إيه هو الـ Inheritance في OOP؟",
+        "options": [
+          "ميكانيزم بيسمح لكلاس يرث من كلاس تاني",
+          "طريقة لتخزين البيانات",
+          "نوع من الـ Loop",
+          "Method للطباعة"
+        ],
+        "correct": 0,
+        "explanation": "صح! Inheritance بيسمح لـ Derived Class (الابن) إنه يرث Fields و Methods من Base Class (الأب). ده بيوفر إعادة استخدام الكود. 👨‍👩‍👧‍👦"
+      },
+      {
+        "id": 2,
+        "question": "في C#، إزاي بنعبر عن Inheritance؟",
+        "options": [
+          "باستخدام `:`",
+          "باستخدام `extends`",
+          "باستخدام `inherits`",
+          "باستخدام `->`"
+        ],
+        "correct": 0,
+        "explanation": "صح! في C# بنستخدم `:` عشان نعبر عن Inheritance. مثلاً: `class Cat : Animal` يعني Cat بيرث من Animal. بسيطة! 🎯"
+      },
+      {
+        "id": 3,
+        "question": "Abstract Class مينفعش:",
+        "options": [
+          "نعمل منها أوبجكت",
+          "تحتوي على Methods معمولة Implement",
+          "تورث لـ Derived Classes",
+          "تحتوي على Fields"
+        ],
+        "correct": 0,
+        "explanation": "صح! Abstract Class مينفعش نعمل منها أوبجكت. بس ممكن تحتوي على Implemented Methods و Abstract Methods. بتستخدم كـ Base Class بس. 🎨"
+      },
+      {
+        "id": 4,
+        "question": "Sealed Class يعني:",
+        "options": [
+          "ممنوع أي كلاس يرث منها",
+          "مش بنعمل منها أوبجكت",
+          "بتورث من كل الكلاسes",
+          "Method مش بتتنفذ"
+        ],
+        "correct": 0,
+        "explanation": "صح! `sealed` يعني ممنوع أي كلاس يرث من الكلاس ده. بس ممكن نعمل منها أوبجكت عادي. بنستخدمها عشن نمنع Inheritance. 🔒"
+      },
+      {
+        "id": 5,
+        "question": "لما بنعمل أوبجكت من Derived Class، إيه Constructor بيتنفذ الأول؟",
+        "options": [
+          "Base Class Constructor",
+          "Derived Class Constructor",
+          "الاتنين مع بعض",
+          "مفيش Constructor بيتنفذ"
+        ],
+        "correct": 0,
+        "explanation": "صح! Base Class Constructor بيتنفذ الأول، وبعدين Derived Class Constructor. ده عشان الأب لازم يتكون قبل الابن! 👴"
+      }
+    ]
+  },
+  {
+    "chapterId": 8,
+    "questions": [
+      {
+        "id": 1,
+        "question": "Polymorphism يعني:",
+        "options": [
+          "\"اسم واحد، أشكال كتير\" — أوبجكتs بتستجيب لنفس Method بطرق مختلفة",
+          "تغيير شكل الكلاس",
+          "حذف Methods",
+          "عمل Array من Methods"
+        ],
+        "correct": 0,
+        "explanation": "صح! Polymorphism = 'اسم واحد، أشكال كتير'. كلمة يونانية: Poly = كتير، Morph = أشكال. أوبجكتs مختلفة ممكن تستجيب لنفس الـ Method بطرق مختلفة. 🎭"
+      },
+      {
+        "id": 2,
+        "question": "إزاي بنخلي Method قابلة للـ Override؟",
+        "options": [
+          "بنستخدم `virtual` في Base Class",
+          "بنستخدم `abstract` في Base Class",
+          "بنستخدم `override` في Base Class",
+          "مش محتاجين حاجة"
+        ],
+        "correct": 0,
+        "explanation": "صح! بنستخدم `virtual` في Base Class عشان نخلي Method قابلة للـ Override. وبعدين `override` في Derived Class عشن نستبدل التنفيذ. 🔄"
+      },
+      {
+        "id": 3,
+        "question": "Interface بيحتوي على:",
+        "options": [
+          "Method declarations بس (من غير implementation)",
+          "Method implementations كاملة",
+          "Fields بس",
+          "Properties بس"
+        ],
+        "correct": 0,
+        "explanation": "صح! Interface بيحتوي على Method declarations من غير implementation. الكلاس اللي بيستخدم Interface لازم يطبق كل Methods. 📜"
+      },
+      {
+        "id": 4,
+        "question": "C# بيسمح بـ Multiple Inheritance من:",
+        "options": [
+          "Class واحد وInterfaces كتير",
+          "أكتر من Class",
+          "مش بيسمح بالـ Inheritance أصلاً",
+          "بس Interface واحد"
+        ],
+        "correct": 0,
+        "explanation": "صح! C# مبيسمحش بـ Multiple Class Inheritance. بس ممكن كلاس يرث من Class واحد ويعمل Implement لأكتر من Interface. 🎯"
+      },
+      {
+        "id": 5,
+        "question": "إيه الفرق بين `new` و `override`؟",
+        "options": [
+          "`new` بيخبي Method，`override` بيستبدلها في Polymorphism",
+          "مفيش فرق",
+          "`new` أسرع",
+          "`override` مش بتشتغل مع virtual"
+        ],
+        "correct": 0,
+        "explanation": "صح! `new` بيخبي (Hide) الـ Method الموروثة — Polymorphism مش بيشتغل. `override` بيستبدل الـ Method وبيخلي Polymorphism يشتغل صح. 🎭"
+      }
+    ]
+  },
+  {
+    "chapterId": 9,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إيه هو الـ Enumeration (enum)؟",
+        "options": [
+          "نوع بيانات بيحتوي على قيم مسماة ثابتة",
+          "Loop بيتكرر على Array",
+          "Method بتعمل حسابات",
+          "كلاس abstract"
+        ],
+        "correct": 0,
+        "explanation": "صح! enum هو نوع بيانات بيحتوي على مجموعة قيم مسماة ثابتة. مفيد لما عندك خيارات محددة زي الأيام أو الحالات. 📋"
+      },
+      {
+        "id": 2,
+        "question": "Struct هو:",
+        "options": [
+          "Value Type بيخزن في الـ Stack",
+          "Reference Type بيخزن في الـ Heap",
+          "Abstract Class",
+          "Interface"
+        ],
+        "correct": 0,
+        "explanation": "صح! Struct هو Value Type بيخزن في الـ Stack. بيتنسخ بالكامل لما تعمل Assignment. مختلف عن Class اللي هو Reference Type. 📊"
+      },
+      {
+        "id": 3,
+        "question": "إيه الفرق بين Struct و Class؟",
+        "options": [
+          "Struct = Value Type (Stack)، Class = Reference Type (Heap)",
+          "Struct أبطأ",
+          "Class مينفعش يحتوي على Methods",
+          "مفيش فرق"
+        ],
+        "correct": 0,
+        "explanation": "صح! Struct Value Type في الـ Stack، Class Reference Type في الـ Heap. Struct بيتنسخ بالكامل، Class بنسخ الـ Reference. Struct مينفعش يرث ولا يحتوي على Destructor. ⚖️"
+      },
+      {
+        "id": 4,
+        "question": "Struct مناسب لما:",
+        "options": [
+          "البيانات صغيرة ومش محتاجة Inheritance",
+          "البيانات كبيرة ومعقدة",
+          "محتاج Inheritance",
+          "محتاج Virtual Methods"
+        ],
+        "correct": 0,
+        "explanation": "صح! استخدم Struct لما البيانات صغيرة (أقل من 16 بايت)، مش محتاجة Inheritance، وBehavior مش معقد. لكل حاجة تانية، استخدم Class! 🎯"
+      },
+      {
+        "id": 5,
+        "question": "لما تعمل Assignment لـ Struct، إيه اللي بيحصل؟",
+        "options": [
+          "بيتعمل نسخة كاملة من البيانات",
+          "بيتنسخ الـ Reference بس",
+          "بيتعمل Link للأوبجكت الأصلي",
+          "مفيش حاجة بتتغير"
+        ],
+        "correct": 0,
+        "explanation": "صح! Assignment لـ Struct بيعمل نسخة كاملة (Deep Copy) من البيانات. يعني تغيير النسخة الجديدة مبيأثرش على الأصلية. ده عشان Struct Value Type! 📋"
+      }
+    ]
+  },
+  {
+    "chapterId": 10,
+    "questions": [
+      {
+        "id": 1,
+        "question": "إيه هو الـ Delegate؟",
+        "options": [
+          "نوع بيمثل Reference لـ Method",
+          "Method بتعمل حسابات",
+          "Class abstract",
+          "Variable بتخزن رقم"
+        ],
+        "correct": 0,
+        "explanation": "صح! Delegate هو نوع بيمثل Reference لـ Method. لما تعمل Instance منه، ممكن تربطه بأي Method بنفس الـ Signature. زي pointer للدالة! 📞"
+      },
+      {
+        "id": 2,
+        "question": "Multicast Delegate يعني:",
+        "options": [
+          "Delegate بيشاور على أكتر من Method في نفس الوقت",
+          "Delegate بيشاور على Method واحد بس",
+          "Method بتنادي أكتر من Delegate",
+          "Error في الكود"
+        ],
+        "correct": 0,
+        "explanation": "صح! Multicast Delegate بيشاور على أكتر من Method. بنستخدم `+=` عشان نضيف و `-=` عشان نشيل. لما نستدعي الـ Delegate، كل Methods بتترن بالتتابع! 📢"
+      },
+      {
+        "id": 3,
+        "question": "الـ Event بيستخدم `+=` ليه؟",
+        "options": [
+          "عشان نضيف Event Handler (مش `=` عشان Security)",
+          "عشان هو أسرع",
+          "عشان هو أسهل",
+          "مفيش سبب"
+        ],
+        "correct": 0,
+        "explanation": "صح! Events بيستخدموا `+=` بس (مش `=`) عشان ميقدرش حد يستبدل كل Handlers بـ Handler واحد. ده بيحمي من overwrite accidental. 🔒"
+      },
+      {
+        "id": 4,
+        "question": "Event Handler هو:",
+        "options": [
+          "Method بتتنفذ لما الـ Event يحصل",
+          "نوع من الـ Events",
+          "Delegate Declaration",
+          "Class خاص"
+        ],
+        "correct": 0,
+        "explanation": "صح! Event Handler هو Method بتتنفذ (أو يتنادي) لما الـ Event يحصل. بنربطه بالـ Event باستخدام `+=`. 🔔"
+      },
+      {
+        "id": 5,
+        "question": "`?.Invoke()` (Null-conditional) بيعمل إيه؟",
+        "options": [
+          "بيستدعي الـ Delegate لو مش null",
+          "بيخلي الـ Delegate null",
+          "بيحذف الـ Delegate",
+          "بيخلّي الـ Delegate يرجع null"
+        ],
+        "correct": 0,
+        "explanation": "صح! `?.Invoke()` بيستدعي الـ Delegate لو هو مش null. لو null، مفيش حاجة بتحصل (مش بيحصل Exception). ده أسلوب آمن للـ Invoke! 🛡️"
+      }
+    ]
+  }
+]

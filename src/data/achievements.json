@@ -1,0 +1,182 @@
+[
+  {
+    "id": "first_chapter",
+    "title": "أول خطوة",
+    "description": "اتطلعت على أول فصل. يا نجم، الرحلة ابتدت!",
+    "icon": "Footprints",
+    "category": "progress",
+    "condition": "view_first_chapter",
+    "unlocked": false
+  },
+  {
+    "id": "chapter_hero",
+    "title": "بطل الفصول",
+    "description": "كملت 5 فصول. إنت مش سهل يا يسطا!",
+    "icon": "Trophy",
+    "category": "progress",
+    "condition": "complete_5_chapters",
+    "unlocked": false
+  },
+  {
+    "id": "oop_master",
+    "title": "ماستر الـ OOP",
+    "description": "كملت كل الفصول العشرة! إنت أسطورة يا نجم! 🏆",
+    "icon": "Crown",
+    "category": "progress",
+    "condition": "complete_10_chapters",
+    "unlocked": false
+  },
+  {
+    "id": "quiz_rookie",
+    "title": "مبتدئ الاختبارات",
+    "description": "حليت أول quiz. كده تمام، ابتدت تتدرب!",
+    "icon": "Target",
+    "category": "quiz",
+    "condition": "complete_first_quiz",
+    "unlocked": false
+  },
+  {
+    "id": "quiz_warrior",
+    "title": "محارب الاختبارات",
+    "description": "حليت 5 quizzes. دماغك شغالة زي الكمبيوتر!",
+    "icon": "Sword",
+    "category": "quiz",
+    "condition": "complete_5_quizzes",
+    "unlocked": false
+  },
+  {
+    "id": "perfect_score",
+    "title": "النتيجة المثالية",
+    "description": "جبت 100% في quiz! إنت ذكي أوي يا معلم!",
+    "icon": "Star",
+    "category": "quiz",
+    "condition": "perfect_quiz_score",
+    "unlocked": false
+  },
+  {
+    "id": "note_taker",
+    "title": "محرر الملاحظات",
+    "description": "عملت أول ملاحظة. المهم يا يسطا، اكتب عشان متنساش!",
+    "icon": "BookOpen",
+    "category": "special",
+    "condition": "create_first_note",
+    "unlocked": false
+  },
+  {
+    "id": "collector",
+    "title": "جامع الملاحظات",
+    "description": "عملت 10 ملاحظات. مكتبتك بدأت تكبر!",
+    "icon": "Library",
+    "category": "special",
+    "condition": "create_10_notes",
+    "unlocked": false
+  },
+  {
+    "id": "focus_master",
+    "title": "سيد التركيز",
+    "description": "استخدمت Focus Mode لمدة 25 دقيقة. ركز يا نجم!",
+    "icon": "Brain",
+    "category": "special",
+    "condition": "use_focus_mode",
+    "unlocked": false
+  },
+  {
+    "id": "explorer",
+    "title": "المستكشف",
+    "description": "زرت كل صفحات الموقع. فضولك جميل!",
+    "icon": "Compass",
+    "category": "special",
+    "condition": "visit_all_pages",
+    "unlocked": false
+  },
+  {
+    "id": "beginner",
+    "title": "OOP Beginner",
+    "description": "وصلت للمستوى الأول! إنت دلوقتي رسمياً طالب OOP!",
+    "icon": "Sprout",
+    "category": "progress",
+    "condition": "reach_level_1",
+    "unlocked": false
+  },
+  {
+    "id": "class_explorer",
+    "title": "Class Explorer",
+    "description": "وصلت للمستوى التاني! إنت بقيت تفهم في الكلاسes!",
+    "icon": "Search",
+    "category": "progress",
+    "condition": "reach_level_2",
+    "unlocked": false
+  },
+  {
+    "id": "inheritance_master",
+    "title": "Inheritance Master",
+    "description": "وصلت للمستوى التالت! ورثت المعرفة يا بطل!",
+    "icon": "GitBranch",
+    "category": "progress",
+    "condition": "reach_level_3",
+    "unlocked": false
+  },
+  {
+    "id": "architecture_wizard",
+    "title": "Architecture Wizard",
+    "description": "وصلت لأعلى مستوى! إنت ويزارد الـ OOP! 🧙‍♂️",
+    "icon": "Wand2",
+    "category": "progress",
+    "condition": "reach_level_4",
+    "unlocked": false
+  },
+  {
+    "id": "night_owl",
+    "title": "بومة الليل",
+    "description": "ذاكرت بعد منتصف الليل. المبرمجين الحقيقيين مبيناموش! 🦉",
+    "icon": "Moon",
+    "category": "special",
+    "condition": "study_at_night",
+    "unlocked": false
+  },
+  {
+    "id": "speed_reader",
+    "title": "سريع القراءة",
+    "description": "خلصت فصل في أقل من 5 دقايق. إنت سريع أوي! ⚡",
+    "icon": "Zap",
+    "category": "special",
+    "condition": "fast_read_chapter",
+    "unlocked": false
+  },
+  {
+    "id": "simplify_fan",
+    "title": "محب البساطة",
+    "description": "استخدمت Smart Simplify Mode. البساطة جميلة!",
+    "icon": "Lightbulb",
+    "category": "special",
+    "condition": "use_simplify_mode",
+    "unlocked": false
+  },
+  {
+    "id": "comparer",
+    "title": "المقارن",
+    "description": "استخدمت Comparison Engine. بتفكر بطريقة تحليلية!",
+    "icon": "Scale",
+    "category": "special",
+    "condition": "use_comparison",
+    "unlocked": false
+  },
+  {
+    "id": "search_pro",
+    "title": "محترف البحث",
+    "description": "استخدمت Search 5 مرات. الدور على المعرفة مستمر! 🔍",
+    "icon": "Search",
+    "category": "special",
+    "condition": "use_search_5_times",
+    "unlocked": false
+  },
+  {
+    "id": "return_visitor",
+    "title": "زائر دائم",
+    "description": "رجعت للموع 3 أيام ورا بعض. الاستمرارية سر النجاح! 🔥",
+    "icon": "Flame",
+    "category": "special",
+    "condition": "return_3_days",
+    "unlocked": false
+  }
+]
