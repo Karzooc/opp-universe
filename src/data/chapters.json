@@ -133,7 +133,7 @@
       ]
     },
     "simplifiedContent": "بص يا نجم… الـ Constructor زي لما تدخل مطعم والجرسون بيسألك: عايز تفضل ولا حجز؟ ده هو الـ Setup الأولي. الـ this زي ما تقول 'أنا' — بتشاور على نفسك. الـ Overloaded Constructors زي إن المطعم يقدملك منيو صغير، منيو وسط، أو منيو كبير. والـ Garbage Collector؟ ده زي الشغال اللي بيجري وراك وينضف الطبلية لما تخلص! 🍽️",
-    "analogy": "تخيل الكلاس زي مصنع عربيات 🏭. الـ Constructor هو خط الإنتاج — لما تطلب عربية جديدة، الخط بيشتغل أوتوماتيك: بيحط الموتور، بيركب العجلات، بيملى البنزين. كل عربية (أوبجekt) ممكن تطلع بلون مختلف لو طلبت كده. الـ Destructor هو المحل اللي بيفك العربية لما تبقى خردة. والـ Garbage Collector؟ ده زي شركة النظافة اللي بتيجي تشيل العربيات القديمة من المصنع عشان تفضل المساحة نظيفة! 🚗",
+    "analogy": "تخيل الكلاس زي مصنع عربيات 🏭. الـ Constructor هو خط الإنتاج — لما تطلب عربية جديدة، خط الإنتاج بيشتغل أوتوماتيك: بيحط الموتور، بيركب العجلات، بيملى البنزين. كل عربية (أوبجekt) ممكن تطلع بلون مختلف لو طلبت كده. الـ Destructor هو المحل اللي بيفك العربية لما تبقى خردة. والـ Garbage Collector؟ ده زي شركة النظافة اللي بتيجي تشيل العربيات القديمة من المصنع عشان تفضل المساحة نظيفة! 🚗",
     "funnyNote": "Constructor سأل Destructor: \"إنت ليه دايما زعلان؟\" Destructor رد: \"عشاني شغلتي بداية النهاية… أنا آخر واحد بيشوف الأوبجكت!\" 😢⚰️"
   },
   {
@@ -146,8 +146,8 @@
     "keyPoints": ["Pass by Reference: بتمرر العنوان مش النسخة", "Pass by Reference using ref: بتقدر تغير المتغير نفسه", "params: دالة بتقبل عدد متغير من الـ arguments", "Array of Objects: مجموعة من الأوبجكتs"],
     "progress": 0,
     "summary": "الفصل ده بيتكلم عن إزاي نتعامل مع الأوبجكتs كـ Parameters في Methods، وإزاي نمررهم بـ Reference، ونعمل Arrays من الأوبجكتs.",
-    "simplifiedSummary": "الفصل ده زي تعليمات النقل والشحن 📦 — إزاي تبعت حاجة (أوبجكت) لمكان تاني (Method) وإزاي تتعامل مع مجموعة حاجات (Array)!"
-    ,"content": {
+    "simplifiedSummary": "الفصل ده زي تعليمات النقل والشحن 📦 — إزاي تبعت حاجة (أوبجكت) لمكان تاني (Method) وإزاي تتعامل مع مجموعة حاجات (Array)!",
+    "content": {
       "overview": "ممكن تمرر أوبجكتs كـ Parameters للـ Methods. لما تمرر أوبجكت، أنت بتمسك Reference للأوبجكت مش نسخة منه. يعني لو غيرت حاجة جوه الميثود، التغيير هياثر على الأوبجكت الأصلي.",
       "sections": [
         {
@@ -362,81 +362,79 @@
   },
   {
     "id": 9,
+    "title": "مخططات الـ UML",
+    "subtitle": "Unified Modeling Language",
+    "number": 9,
+    "icon": "Network",
+    "status": "locked",
+    "keyPoints": ["Class Diagrams: رسم توضيحي للكلاسات وعلاقاتها", "Visibility in UML: تمثيل الـ Access Modifiers بـ (+, -, #)", "Relationships: العلاقات زي Association و Composition", "Interfaces in UML: تمثيل العقود البرمجية مرئياً"],
+    "progress": 0,
+    "summary": "مخطط الـ UML (وتحديداً Class Diagram) هو لغة مرئية بنرسم بيها الكلاسات قبل ما نكتب كود. بيوضح اسم الكلاس، الـ Fields، الـ Methods، وإزاي الكلاسات دي مربوطة ببعضها (وراثة، تركيب، أو تبعية).",
+    "simplifiedSummary": "الـ UML زي الرسم الهندسي للبيت قبل ما تبنيه 🗺️ — بيخليك تشوف شكل العلاقات والكود كله من فوق قبل ما تحط سطر كود واحد!",
+    "content": {
+      "overview": "مخطط كلاسات UML (Class Diagram) بيوفر تمثيل مرئي للهيكل الاستاتيكي للبرنامج. الكلاس بيترسم على شكل مستطيل مقسم لـ 3 أجزاء: الاسم، الخصائص (Attributes)، والعمليات (Operations).",
+      "sections": [
+        {
+          "title": "Class Diagrams & Visibility",
+          "content": "في الـ UML بنعبر عن الـ Access Modifiers برموز بسيطة تسبق المتغير أو الدالة:\n- `+` تعني `public` 🚪\n- `-` تعني `private` 🔒\n- `#` تعني `protected` 🛡️\nده بيسهل فهم الحماية بمجرد النظر للرسمة.",
+          "code": "/* تمثيل الكلاس في الكود بناءً على الرسمة */\nclass Product {\n    private float price; // - price\n    public void SetPrice(float p); // + SetPrice()\n}"
+        },
+        {
+          "title": "Relationships Between Classes",
+          "content": "الـ UML بيحدد إزاي الكلاسات بتتفاعل مع بعضها:\n- Association: علاقة عامة بين كلاسين (استخدام).\n- Aggregation: علاقة 'has-a' ضعيفة (العضو ممكن يعيش لوحده، زي القسم والموظف).\n- Composition: علاقة 'has-a' قوية جداً (الابن بيموت لو الأب مات، زي البيت والغرف).\n- Inheritance (Generalization): علاقة الوراثة 'is-a' وبيترسم بسهم برأس مثلث فارغ بيشاور على الأب."
+        },
+        {
+          "title": "Interfaces in UML",
+          "content": "الـ Interface في الـ UML بتترسم إما كمستطيل عليه علامة «interface» أو على شكل دائرة صغيرة (Lollipop syntax) مربوطة بالكلاس اللي بيعملها Implement بسهم متقطع.",
+          "code": "interface IRunnable {\n    void Run();\n}\n\nclass Robot : IRunnable {\n    public void Run() { /* Implementation */ }\n}"
+        },
+        {
+          "title": "Benefits of UML",
+          "content": "الـ UML بيساعد التيم يفهم السيستم من غير الدخول في تفاصيل الكود المعقدة، وبيسهل التخطيط وتفادي أخطاء التصميم (Design Errors) قبل البناء الحقيقي للمشروع."
+        }
+      ]
+    },
+    "simplifiedContent": "بص يا سيدي… الـ UML ده زي الكروكي اللي المهندس بيرسمه ✍️. بدل ما نقعد نقرأ كود طويل عريض عشان نفهم السيستم، بنبص على الرسمة ونعرف عل طول إن الكلاس ده يخص ده، وإن المتغير ده برايفيت عشان جنبه علامة ناقص (-)، والميثود دي ببليك عشان جنبها زائد (+)! 📊",
+    "analogy": "تخيل إنك بتركب لعبة مكعبات معقدة 🧩. الـ UML هو الكتالوج المصور اللي بيجي مع اللعبة! بيقولك المكعب ده هيركب فين، وإيه القطعة الأساسية اللي ماسكة الباقي (Composition)، ومين بيركب مكان مين (Inheritance). من غير الكتالوج هتعك، بالكتالوج هتبني صح عل طول! 📐",
+    "funnyNote": "المبرمج بيقول للـ UML Designer: \"رسمتك جميلة جداً وسهلة!\" المصمم رد بفخر: \"شكراً، تحب أحولها لكود؟\" المبرمج جري وقال: \"لا، سيب الكود لأصحابه عشان الـ Composite هيموت الـ Garbage Collector!\" 😂"
+  },
+  {
+    "id": 10,
     "title": "الـ Enumerations والـ Structures",
     "subtitle": "Enumerations & Structures",
-    "number": 9,
+    "number": 10,
     "icon": "ListOrdered",
     "status": "locked",
-    "keyPoints": ["Enum: نوع بيانات لقيم مسماة", "Struct: Value Type زي الكلاس بس أخف", "Struct vs Class: اختلافات مهمة", "متى تستخدم Struct بدل Class"],
+    "keyPoints": ["Enum: نوع بيانات لقيم مسماة ومحددة", "Struct: Value Type خفيف شبيه بالكلاس", "Struct vs Class: الـ Struct في الـ Stack والـ Class في الـ Heap", "متى تستخدم Struct بدل Class"],
     "progress": 0,
-    "summary": "الـ Enumeration (enum) هو نوع بيانات بيحتوي على قيم مسماة. الـ Structure (struct) زي الكلاس بس هو Value Type مش Reference Type — بيخزن في الـ Stack وبيُنسخ بالكامل لما ت Assignment.",
-    "simplifiedSummary": "Enum زي لائحة الـ Menu 📋 — فيه خيارات محددة تختار منها. Struct زي الكلاس بس أخف وأسرع — زي الفرق بين العربية والموتوسيكل! 🏍️",
+    "summary": "الـ Enumeration (enum) هو نوع بيانات بيحتوي على قيم ثابتة ومسماة بتسهل قراءة الكود. الـ Structure (struct) بيشبه الكلاس جداً بس هو Value Type بيتخزن في الـ Stack وبيتنسخ بالكامل عند النقل، ومفيش فيه وراثة.",
+    "simplifiedSummary": "Enum زي المنيو المحددة تختار منها 📋. Struct زي الكلاس بس نسخة خفيفة وسريعة للمهام الصغيرة زي الموتوسيكل مقارنة بالعربية! 🏍️",
     "content": {
-      "overview": "الـ Enum بيسمح بتعريف نوع بيانات بقيم ثابتة مسماة. الـ Struct هو Value Type بيقدر يحتوي على Fields و Methods زي الكلاس، بس بيتخزن في الـ Stack.",
+      "overview": "الـ Enum بيعمل نوع بيانات جديد بقيم ثابتة. الـ Struct هو Value Type بيقدر يحتوي على Fields و Methods زي الكلاس، بس بيتخزن في الـ Stack مش الـ Heap وبيوفر أداء أسرع في الميموري للبيانات الصغيرة.",
       "sections": [
         {
           "title": "Enumerations",
-          "content": "الـ Enum بيعمل نوع بيانات جديد بقيم ثابتة. مفيد لما عندك مجموعة قيم محددة زي الأيام، الألوان، أو الحالات.",
+          "content": "الـ Enum بيعمل نوع بيانات جديد بقيم ثابتة. مفيد لما عندك مجموعة قيم محددة زي الأيام، الألوان، أو الحالات المحددة للسيستم.",
           "code": "enum Color {\n    Red,\n    Green,\n    Yellow\n}\n\nColor myColor = Color.Red;\n\nenum Gender {\n    Male,\n    Female\n}\n\nclass Person {\n    public string name;\n    public Gender gender;\n}\n\nPerson p = new Person();\np.name = \"Sahar\";\np.gender = Gender.Female;"
         },
         {
           "title": "Structures",
-          "content": "الـ Struct بيستخدم الكلمة `struct` بدل `class`. هو Value Type — يعني بيتخزن في الـ Stack وبيتنسخ بالكامل لما تعمل Assignment. مينفعش يرث من struct تاني ولا يحتوي على Virtual Methods.",
-          "code": "public struct Point {\n    public double X { get; set; }\n    public double Y { get; set; }\n    \n    public Point(double x, double y) {\n        X = x; Y = y;\n    }\n    \n    public void Print() {\n        Console.WriteLine($\"({X}, {Y})\");\n    }\n}\n\nPoint p1 = new Point(5, 12);\nPoint p2 = p1;  // نسخة كاملة!\np2.X = 70;\np1.Print();  // (5, 12) - ماتأثرش!"
+          "content": "الـ Struct بيستخدم الكلمة `struct` بدل `class`. هو Value Type — يعني بيتخزن في الـ Stack وبيتنسخ بالكامل لما تعمل Assignment لمتغير تاني. مينفعش يرث من struct تاني ولا يحتوي على Virtual Methods.",
+          "code": "public struct Point {\n    public double X { get; set; }\n    public double Y { get; set; }\n    \n    public Point(double x, double y) {\n        X = x; Y = y;\n    }\n    \n    public void Print() {\n        Console.WriteLine($\"({X}, {Y})\");\n    }\n}\n\nPoint p1 = new Point(5, 12);\nPoint p2 = p1;  // نسخة كاملة!\np2.X = 70;\np1.Print();  // (5, 12) - ماتأثرش بـ p2!"
         },
-        {
+{
           "title": "Struct vs Class",
-          "content": "الفرق الرئيسي: Struct هو Value Type (في الـ Stack) و Class هو Reference Type (في الـ Heap). لما تعمل Assignment لـ Struct بيتعمل Copy كامل. لما تعمل Assignment لـ Class بيتنسخ الـ Reference بس.",
-          "code": "// Class - Reference Type\nclass PointClass {\n    public int X, Y;\n}\n\nPointClass c1 = new PointClass();\nc1.X = 5;\nPointClass c2 = c1;  // نسخة الـ Reference\nc2.X = 10;\nConsole.WriteLine(c1.X);  // 10 - اتأثر!\n\n// Struct - Value Type\nstruct PointStruct {\n    public int X, Y;\n}\n\nPointStruct s1 = new PointStruct();\ns1.X = 5;\nPointStruct s2 = s1;  // نسخة كاملة\ns2.X = 10;\nConsole.WriteLine(s1.X);  // 5 - ماتأثرش!"
+          "content": "الفرق الرئيسي: Struct هو Value Type (في الـ Stack) و Class هو Reference Type (في الـ Heap). لما تعمل Assignment لـ Struct بيتعمل Copy كامل للقيم. لما تعمل Assignment لـ Class بيتنسخ الـ Reference (العنوان) بس والاتنين بيشاوروا على نفس المكان.",
+          "code": "// Class - Reference Type\nclass PointClass {\n    public int X, Y;\n}\n\nPointClass c1 = new PointClass();\nc1.X = 5;\nPointClass c2 = c1;  // نسخة الـ Reference\nc2.X = 10;\nConsole.WriteLine(c1.X);  // 10 - اتأثر!\n\n// Struct - Value Type\nstruct PointStruct {\n    public int X, Y;\n}\n\nPointStruct s1 = new PointStruct();\ns1.X = 5;\nPointStruct s2 = s1;  // نسخة كاملة للقيم\ns2.X = 10;\nConsole.WriteLine(s1.X);  // 5 - ماتأثرش!"
         },
         {
-          "title": "متى تستخدم Struct",
-          "content": "استخدم Struct لما:\n- البيانات صغيرة (أقل من 16 بايت)\n- مش محتاج Inheritance\n- Behavior مش معقد\n- مش محتاج تتكرر كتير (لو هتعمل Assignment كتير، Struct ممكن يبقى أبطأ عشان النسخ)\n\nاستخدم Class لكل حاجة تانية!"
+          "title": "متى تستخدم Struct بدل Class",
+          "content": "يفضل استخدام الـ Struct في الحالات التالية:\n- حجم البيانات صغير جداً (أقل من 16 بايت).\n- العمر الافتراضي للأوبجكت قصير.\n- مش محتاج تعمل Inheritance (وراثة) خالص.\n- البيانات غير قابلة للتغيير بشكل متكرر بعد إنشائها (Immutable)."
         }
       ]
     },
-    "simplifiedContent": "بص يا معلم… Enum زي لائحة الأصناف في المطعم: مفيش 'طبق عشوائي' — لازم تختار من اللائحة! 🍽️ Struct زي الشنطة — لما تديها لحد، بتديها نسخة كاملة مش مجرد عنوان الشنطة. Class زي البيت — لما تقول 'أنا عايز نفس بيتك'، مش هتبني بيت جديد، هتدي العنوان بس! 🏠",
-    "analogy": "تخيل Enum زي لائحة حالة الطقس 🌤️ — مفيش 'طقس غريب'! لازم يكون: مشمس، ماطر، غائم، أو ثلج. Struct زي الهدية 🎁 — لما تديها لحد، بيديها نسخة كاملة مش مجرد صورة. Class زي المنزل 🏠 — لما تقول 'عايز نفس بيتك'، بتدي العنوان مش بتبني بيت جديد! الفرق في الـ Assignment: Struct = نسخة كاملة، Class = نسخة العنوان! 📋",
+    "simplifiedContent": "بص يا معلم… Enum زي خيارات فصيلة الدم (A, B, O) مفيش اختيار براهم! 🩸 أما الـ Struct زي لما تصور ورقة وتديها لزميلك، لو شخبط عليها ورقتك الأصلية نظيفة زي ما هي (Value Type). الكلاس بقا زي ما تديله لوكيشن على الواتساب، لو هو راح هد البيت.. البيت الأصلي اتهد لأنكم بتشاوروا على نفس العنوان! 🏠",
+    "analogy": "تخيل Enum زي الاتجاهات الأربعة 🧭 (شمال، جنوب، شرق، غرب) مستحيل تخترع اتجاه خامس. الـ Struct زي المحفظة اللي في جيبك 👛، خفيفة وسريعة وجواها فلوسك وبتتحرك معاك في الـ Stack. الكلاس زي الحساب البنكي 🏦، المحفظة مش جواها البنك نفسه، جواها الكارت (Reference) اللي بيشاور على الخزنة الكبيرة اللي في الـ Heap!",
     "funnyNote": "Enum قال لـ int: \"إنت فوضوي أوي — قيمك ملهاش اسم!\" int رد: \"وإنت rigid أوي — مفيش مجال للإبداع!\" Struct دخلت قالت: \"أنا الوسط — صغيرة ومنظمة!\" 🎯😂"
-  },
-  {
-    "id": 10,
-    "title": "الـ Delegates والـ Events",
-    "subtitle": "Delegates & Events",
-    "number": 10,
-    "icon": "Link",
-    "status": "locked",
-    "keyPoints": ["Delegate: نوع بيشاور على Method", "Multicast: Delegate يشاور على أكتر من Method", "Events: Actions بيستجاب ليها", "Event Handlers: الدوال اللي بتتنفذ لما الـ Event يحصل"],
-    "progress": 0,
-    "summary": "الـ Delegate هو نوع بيمثل Reference لـ Method. لما تعمل Instance من Delegate، ممكن تربطه بأي Method بنفس الـ Signature. الـ Events هي User Actions زي Click أو Key Press، والـ Event Handlers هي Methods بتتنفذ لما الـ Event يحصل.",
-    "simplifiedSummary": "Delegate زي الرقم اللي بتدهولك عشان تتصل بحد 📞. Event زي الجرس — لما يدق، حد لازم يستجاب! 🔔",
-    "content": {
-      "overview": "الـ Delegate بيسمح لنا نمرر Methods كـ Parameters لـ Methods تانية. الـ Event بيربط Action (زي Click) بـ Event Handler (Method بتتنفذ كرد فعل).",
-      "sections": [
-        {
-          "title": "Delegates",
-          "content": "الـ Delegate بيعرف نوع Method معينة (بـ parameters و return type معينة). لما تعمل Instance منه، ممكن تربطه بأي Method بنفس الـ Signature.",
-          "code": "delegate int MyDelegate(int x, int y);\n\nclass Program {\n    static int Add(int a, int b) {\n        return a + b;\n    }\n    \n    static int Multiply(int a, int b) {\n        return a * b;\n    }\n    \n    static void Execute(MyDelegate del, int a, int b) {\n        Console.WriteLine(del(a, b));\n    }\n    \n    static void Main() {\n        MyDelegate d = new MyDelegate(Add);\n        Console.WriteLine(d(7, 8));  // 15\n        \n        Execute(Multiply, 5, 6);  // 30\n    }\n}"
-        },
-        {
-          "title": "Multicast Delegates",
-          "content": "الـ Delegate ممكن يشاور على أكتر من Method في نفس الوقت! بنستخدم `+=` عشان نضيف Method و `-=` عشان نشيله. لما نستدعي الـ Delegate، كل Methods بتترن بالتتابع.",
-          "code": "delegate void Notify(string message);\n\nclass Program {\n    static void SendEmail(string msg) {\n        Console.WriteLine(\"Email: \" + msg);\n    }\n    \n    static void SendSMS(string msg) {\n        Console.WriteLine(\"SMS: \" + msg);\n    }\n    \n    static void Main() {\n        Notify notify = SendEmail;\n        notify += SendSMS;\n        \n        notify(\"Hello!\");\n        // Output:\n        // Email: Hello!\n        // SMS: Hello!\n        \n        notify -= SendEmail;\n        notify(\"Bye!\");\n        // Output: SMS: Bye!\n    }\n}"
-        },
-        {
-          "title": "Events",
-          "content": "الـ Event بيعلن إن حاجة حصلت (زي Click أو State Change). الـ Event Handlers (Delegates) بتتنفذ لما الـ Event يحصل. الـ Events بيستخدموا `+=` بس (مش `=`) عشان Security.",
-          "code": "delegate void StateChangedHandler(string oldState, string newState);\n\nclass PowerSwitch {\n    public event StateChangedHandler StateChanged;\n    public string CurrentState { get; private set; }\n    \n    public void TurnOn() {\n        if (CurrentState != \"On\") {\n            string old = CurrentState;\n            CurrentState = \"On\";\n            StateChanged?.Invoke(old, \"On\");\n        }\n    }\n}\n\nclass Program {\n    static void Main() {\n        PowerSwitch p = new PowerSwitch();\n        p.StateChanged += OnStateChanged;\n        p.TurnOn();\n    }\n    \n    static void OnStateChanged(string old, string newState) {\n        Console.WriteLine($\"State changed from {old} to {newState}\");\n    }\n}"
-        },
-        {
-          "title": "Built-in EventHandler",
-          "content": "C# عنده نوع جاهز اسمه `EventHandler` مالوش Parameters، و `EventHandler<T>` بياخد Parameter واحد. دي الطريقة المفضلة في التطبيقات الحديثة.",
-          "code": "class Button {\n    public event EventHandler Clicked;\n    \n    public void Click() {\n        Clicked?.Invoke(this, EventArgs.Empty);\n    }\n}\n\nclass Program {\n    static void Main() {\n        Button btn = new Button();\n        btn.Clicked += (sender, e) => {\n            Console.WriteLine(\"Button clicked!\");\n        };\n        btn.Click();\n    }\n}"
-        }
-      ]
-    },
-    "simplifiedContent": "بص يا نجم… Delegate زي الرقم اللي بتدهولك عشان تتصل بحد 📞. Multicast Delegate زي Group Chat — رسالة واحدة توصل لكتير! Event زي الجرس 🔔 — لما يدق، كل اللي مسجلين (Handlers) بيستجيبوا. EventHandler زي الـ Receptionist اللي بيوصل المكالمات للأشخاص المناسبين! 👩‍💼",
-    "analogy": "تخيل Delegate زي التوصيلة 🚕 — بتقول للسواق 'وديني للمكان الفلاني' بس مش بتقوله إزاي. Multicast Delegate زي الباص 🚌 — بيوصل نفس الرسالة (المسافرين) لأكتر من محطة. Event زي جرس الإنذار 🔥 — لما يدق، كل فرق الإطفاء (Handlers) بتتحرك! Event Handler زي الـ Firefighter — بيستنى الإشارة عشان يتحرك! 🚒",
-    "funnyNote": "Delegate اتصل بـ Method قال: \"إزيك يا صاحبي؟\" Method رد: \"إنت مين؟!\" Delegate قال: \"أنا بس Reference — أنا اللي بربط الناس ببعض!\" 📞😂"
   }
 ]

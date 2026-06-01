@@ -5,7 +5,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/opp-universe/', 
   plugins: [inspectAttr(), react()],
   server: {
     port: 3000,
