@@ -93,7 +93,7 @@
       },
       {
         "id": 3,
-        "question": "لو عملت Field `private`، مين يقدر يوصله؟",
+        "question": "لو عملت Field `private`字段، مين يقدر يوصله؟",
         "options": [
           "أي حد",
           "بس جوه نفس الكلاس",
@@ -182,7 +182,7 @@
       },
       {
         "id": 5,
-        "question": "الـ Destructor بيتنفذ إمتى؟",
+        "question": "الـ Destructor بيتنفذ إمتى？",
         "options": [
           "لما الأوبجكت بيتمسح من الميموري",
           "لما البرنامج يبدأ",
@@ -190,7 +190,7 @@
           "كل يوم جمعة"
         ],
         "correct": 0,
-        "explanation": "صح! الـ Destructor بيتنفذ لما الأوبجekt بيتمسح (by Garbage Collector). مش بنقدر نستدعيه يدوياً. بنستخدمه عشو ننظف Resources. ⚰️"
+        "explanation": "صح! الـ Destructor بيتنفذ لما الأوبجكت بيتمسح (by Garbage Collector). مش بنقدر نستدعيه يدوياً. بنستخدمه عشان ننظف Resources. ⚰️"
       }
     ]
   },
@@ -219,7 +219,7 @@
           "ref مش بتشتغل مع Objects"
         ],
         "correct": 1,
-        "explanation": "صح! لما تستخدم `ref`، الـ Method بتقدر تغير الـ Reference نفسه — يعني تخلي يشاور على أوبجekt مختلف. من غير `ref`، ممكن تغير محتوى الأوبجekt بس مش الـ Reference. 🔄"
+        "explanation": "صح! لما تستخدم `ref`، الـ Method بتقدر تغير الـ Reference نفسه — يعني تخلي يشاور على أوبجكت مختلف. من غير `ref`، ممكن تغير محتوى الأوبجكت بس مش الـ Reference. 🔄"
       },
       {
         "id": 3,
@@ -243,7 +243,7 @@
           "مفيش حاجة"
         ],
         "correct": 1,
-        "explanation": "صح! Array of Objects بيخزن References (عناوين) للأوبجكتs اللي في الـ Heap. لازم تعمل كل أوبجekt بـ `new` قبل ما تحطه في الـ Array. 📚"
+        "explanation": "صح! Array of Objects بيخزن References (عناوين) للأوبجكتs اللي في الـ Heap. لازم تعمل كل أوبجكت بـ `new` قبل ما تحطه في الـ Array. 📚"
       },
       {
         "id": 5,
@@ -365,7 +365,7 @@
       },
       {
         "id": 4,
-        "question": "أي Operator مينفعش نعمله Overload في C#؟",
+        "question": "Any Operator مينفعش نعمله Overload في C#؟",
         "options": [
           "`=` (Assignment)",
           "`+`",
@@ -524,6 +524,71 @@
     "questions": [
       {
         "id": 1,
+        "question": "ما هو الغرض الأساسي من لغة النمذجة الموحدة (UML)؟",
+        "options": [
+          "ترجمة كود C# إلى لغة الآلة مباشرة",
+          "تصوير، تصميم، وتوثيق هيكلية الأنظمة البرمجية",
+          "تصحيح أخطاء التشغيل تلقائياً",
+          "إدارة مساحات الذاكرة الفيزيائية مثل الـ Stack والـ Heap"
+        ],
+        "correct": 1,
+        "explanation": "صح يا بطل! الـ UML هي الأداة القياسية عشان نرسم ونوضح تصميم السيستم قبل الكود، ونوثق العلاقات بين الكلاسات عشان الكل يفهم التصميم بسهولة! 🗺️"
+      },
+      {
+        "id": 2,
+        "question": "في مخطط كلاسات الـ UML، الكلاس بيتم تمثيله بمستطيل منقسم إلى كم قسم؟",
+        "options": [
+          "قسمين فقط",
+          "ثلاثة أقسام رئيسية",
+          "أربعة أقسام",
+          "لا يتم تقسيمه إطلاقاً"
+        ],
+        "correct": 1,
+        "explanation": "تمام كدة! المستطيل بينقسم لـ 3 أقسام بالتنازل: اسم الكلاس (Class Name)، ثم الخصائص (Attributes)، وأخيراً الدوال والعمليات (Methods). 🗂️"
+      },
+      {
+        "id": 3,
+        "question": "إيه الرمز المستخدم في UML للتعبير عن خاصية أو دالة private؟",
+        "options": [
+          "العلامة (+)",
+          "العلامة (#)",
+          "العلامة (-)",
+          "العلامة (~)"
+        ],
+        "correct": 2,
+        "explanation": "صح جداً! علامة الناقص (-) تعني private 🔒، وعلامة الزائد (+) تعني public 🔓، وعلامة الشباك (#) تعني protected."
+      },
+      {
+        "id": 4,
+        "question": "علاقة الـ Composition (التركيب القوي) بتمثل في الـ UML بسهم شكلة إيه؟",
+        "options": [
+          "سهم بمثلث مجوف يشير إلى الكلاس الأساسي",
+          "خط ينتهي بمعين (Diamond) مفتوح ومجوف",
+          "خط ينتهي بمعين (Diamond) ممتلئ ومصمت",
+          "خط متقطع بدون أي أسهم"
+        ],
+        "correct": 2,
+        "explanation": "الله ينور! المعين المصمت الأسود (Filled Diamond) هو الـ Composition، وده معناه إن الكائن الابن حياته مرتبطة تماماً بالأب (لو الأب اتمسح، الابن بيتمسح معاه). 🖤"
+      },
+      {
+        "id": 5,
+        "question": "لما تشوف سهم برأس مثلث مجوف (Hollow Triangle) بيشاور على كلاس، ده معناه علاقة إيه؟",
+        "options": [
+          "علاقة وراثة (Inheritance / Is-A)",
+          "علاقة تجمع ضعيف (Aggregation)",
+          "علاقة تركيب قوي (Composition)",
+          "تعددية العناصر (Multiplicity)"
+        ],
+        "correct": 0,
+        "explanation": "بالظبط! المثلث المجوف الأبيض ده معناه وراثة (Inheritance)، يعني الكلاس الحالي بيرث من الكلاس اللي السهم بيشاور عليه! 👑"
+      }
+    ]
+  },
+  {
+    "chapterId": 10,
+    "questions": [
+      {
+        "id": 1,
         "question": "إيه هو الـ Enumeration (enum)؟",
         "options": [
           "نوع بيانات بيحتوي على قيم مسماة ثابتة",
@@ -581,71 +646,6 @@
         ],
         "correct": 0,
         "explanation": "صح! Assignment لـ Struct بيعمل نسخة كاملة (Deep Copy) من البيانات. يعني تغيير النسخة الجديدة مبيأثرش على الأصلية. ده عشان Struct Value Type! 📋"
-      }
-    ]
-  },
-  {
-    "chapterId": 10,
-    "questions": [
-      {
-        "id": 1,
-        "question": "إيه هو الـ Delegate؟",
-        "options": [
-          "نوع بيمثل Reference لـ Method",
-          "Method بتعمل حسابات",
-          "Class abstract",
-          "Variable بتخزن رقم"
-        ],
-        "correct": 0,
-        "explanation": "صح! Delegate هو نوع بيمثل Reference لـ Method. لما تعمل Instance منه، ممكن تربطه بأي Method بنفس الـ Signature. زي pointer للدالة! 📞"
-      },
-      {
-        "id": 2,
-        "question": "Multicast Delegate يعني:",
-        "options": [
-          "Delegate بيشاور على أكتر من Method في نفس الوقت",
-          "Delegate بيشاور على Method واحد بس",
-          "Method بتنادي أكتر من Delegate",
-          "Error في الكود"
-        ],
-        "correct": 0,
-        "explanation": "صح! Multicast Delegate بيشاور على أكتر من Method. بنستخدم `+=` عشان نضيف و `-=` عشان نشيل. لما نستدعي الـ Delegate، كل Methods بتترن بالتتابع! 📢"
-      },
-      {
-        "id": 3,
-        "question": "الـ Event بيستخدم `+=` ليه؟",
-        "options": [
-          "عشان نضيف Event Handler (مش `=` عشان Security)",
-          "عشان هو أسرع",
-          "عشان هو أسهل",
-          "مفيش سبب"
-        ],
-        "correct": 0,
-        "explanation": "صح! Events بيستخدموا `+=` بس (مش `=`) عشان ميقدرش حد يستبدل كل Handlers بـ Handler واحد. ده بيحمي من overwrite accidental. 🔒"
-      },
-      {
-        "id": 4,
-        "question": "Event Handler هو:",
-        "options": [
-          "Method بتتنفذ لما الـ Event يحصل",
-          "نوع من الـ Events",
-          "Delegate Declaration",
-          "Class خاص"
-        ],
-        "correct": 0,
-        "explanation": "صح! Event Handler هو Method بتتنفذ (أو يتنادي) لما الـ Event يحصل. بنربطه بالـ Event باستخدام `+=`. 🔔"
-      },
-      {
-        "id": 5,
-        "question": "`?.Invoke()` (Null-conditional) بيعمل إيه؟",
-        "options": [
-          "بيستدعي الـ Delegate لو مش null",
-          "بيخلي الـ Delegate null",
-          "بيحذف الـ Delegate",
-          "بيخلّي الـ Delegate يرجع null"
-        ],
-        "correct": 0,
-        "explanation": "صح! `?.Invoke()` بيستدعي الـ Delegate لو هو مش null. لو null، مفيش حاجة بتحصل (مش بيحصل Exception). ده أسلوب آمن للـ Invoke! 🛡️"
       }
     ]
   }
